@@ -1,0 +1,10 @@
+output   = "pkg/db/models/"
+wipe     = true
+
+[psql]
+dbname = "memoriesbox"
+schema = "mbox"
+host = "127.0.0.1"
+user = "memoriesbox"
+sslmode = "disable"
+blacklist = ["schema_migrations", "schema_lock"]

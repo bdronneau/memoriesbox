@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # Postgre
+  db:
+    image: postgres:15.1-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ${PWD}/db:/docker-entrypoint-initdb.d/
+      - memoriesbox-pgdata:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_PASSWORD=${MEMORIESBOX_DB_PASSWORD}
+      - POSTGRES_USER=${MEMORIESBOX_DB_USER}
+      - PGUSER=${MEMORIESBOX_DB_USER}
+      - PGPASSWORD=${MEMORIESBOX_DB_PASSWORD}
+  migrate_up:
+    build: docker/migrate
+    volumes:
+      - ${PWD}/db:/mnt
+    depends_on:
+      - db
+    environment:
+      - POSTGRESQL_URL=${POSTGRESQL_URL}
+    command: "-wait tcp://db:5432 -timeout 30s migrate -database '${POSTGRESQL_URL}' -path /mnt/migrations up"
+    entrypoint: "dockerize"
+  migrate_down:
+    build: docker/migrate
+    deploy:
+      replicas: 0
+    volumes:
+      - ${PWD}/db:/mnt
+    depends_on:
+      - db
+    environment:
+      - POSTGRESQL_URL=${POSTGRESQL_URL}
+    command: "-wait tcp://db:5432 -timeout 30s migrate -database '${POSTGRESQL_URL}' -path /mnt/migrations down 1"
+    entrypoint: "dockerize"
+
+volumes:
+  memoriesbox-pgdata:

@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "WebAPP",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "cwd": "${cwd}",
+      "program": "${cwd}/cmd/webapp/main.go",
+      "envFile": "${cwd}/.env"
+    },
+    {
+      "name": "WebAPP DEBUG",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "cwd": "${cwd}",
+      "program": "${cwd}/cmd/webapp/main.go",
+      "envFile": "${cwd}/.env"
+    },
+  ]
+}
