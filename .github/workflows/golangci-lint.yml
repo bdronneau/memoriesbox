@@ -11,6 +11,10 @@ permissions:
   contents: read
   # Optional: allow read access to pull request. Use with `only-new-issues` option.
   # pull-requests: read
+
+env:
+  CGO_ENABLED: 0
+
 jobs:
   golangci:
     name: lint
