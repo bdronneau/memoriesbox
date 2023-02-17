@@ -1,11 +1,11 @@
-FROM golang:1.20 as builder
+FROM golang:1.20 AS builder
 
 WORKDIR /app
 COPY . .
 
 RUN CGO_ENABLED=0 go build -ldflags="-s -w" -installsuffix nocgo -o bin/memoriesbox cmd/webapp/main.go
 
-FROM alpine as fetcher
+FROM alpine AS fetcher
 
 WORKDIR /app
 
