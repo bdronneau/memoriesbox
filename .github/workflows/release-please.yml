@@ -12,4 +12,3 @@ jobs:
           release-type: go
           default-branch: main
           token: ${{secrets.RELEASE_PLEASE}}
-          command: github-release
