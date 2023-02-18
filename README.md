@@ -6,11 +6,9 @@ Based on Bonjour poney mojo, this project is memories oriented.
 
 ## Configuration
 
-This application used [ff](https://github.com/peterbourgon/ff/) in order to get configuration (prefix `MBOX_`).
+This application used [ff](https://github.com/peterbourgon/ff/) in order to get configuration (prefix `MEMORIESBOX`).
 
-```shell script
-MEMORIESBOX_
-```
+Check [env_example](./.env_example) for main variables.
 
 ## Development
 
