@@ -15,6 +15,8 @@ RUN apk --update add tzdata ca-certificates zip \
 
 FROM scratch
 
+USER 2000:2000
+
 ENV APP_NAME memoriesbox
 ENV ZONEINFO /zoneinfo.zip
 
@@ -22,5 +24,5 @@ EXPOSE 1080
 ENTRYPOINT [ "/memoriesbox" ]
 
 COPY --from=fetcher /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-COPY --from=fetcher /app/zoneinfo.zip /
-COPY --from=builder /app/bin/${APP_NAME} /
+COPY --from=fetcher --chown=2000:2000 /app/zoneinfo.zip /
+COPY --from=builder --chown=2000:2000 /app/bin/${APP_NAME} /
