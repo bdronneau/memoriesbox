@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bdronneau_memoriesbox&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bdronneau_memoriesbox) | [![Build](https://github.com/bdronneau/memoriesbox/actions/workflows/build.yaml/badge.svg)](https://github.com/bdronneau/memoriesbox/actions/workflows/build.yaml)
+
 # Memories box
 
 Based on Bonjour poney mojo, this project is memories oriented.
