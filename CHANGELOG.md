@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/bdronneau/memoriesbox/compare/v1.0.0...v1.0.1) (2023-02-20)
+
+
+### Bug Fixes
+
+* **ci:** wrong tag detection ([e9870e1](https://github.com/bdronneau/memoriesbox/commit/e9870e1688b252d0829e640fa4a7f0c1bdd6aab0))
+
 ## 1.0.0 (2023-02-20)
 
 
