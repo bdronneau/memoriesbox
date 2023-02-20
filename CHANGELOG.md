@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/bdronneau/memoriesbox/compare/v1.0.1...v1.0.2) (2023-02-20)
+
+
+### Bug Fixes
+
+* **ci:** use personnal token in order to trigger workflow ([205da7b](https://github.com/bdronneau/memoriesbox/commit/205da7b6bf6ff7b6197029b35a19f1780bceccad))
+
 ## [1.0.1](https://github.com/bdronneau/memoriesbox/compare/v1.0.0...v1.0.1) (2023-02-20)
 
 
