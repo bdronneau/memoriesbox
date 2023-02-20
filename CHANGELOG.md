@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/bdronneau/memoriesbox/compare/v1.1.0...v1.1.1) (2023-02-20)
+
+
+### Bug Fixes
+
+* **db:** missing schema creation ([cb1f4ec](https://github.com/bdronneau/memoriesbox/commit/cb1f4ecae193bcbcae083b35e71ef0a393e3e074))
+
 ## [1.1.0](https://github.com/bdronneau/memoriesbox/compare/v1.0.3...v1.1.0) (2023-02-20)
 
 
