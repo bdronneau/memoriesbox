@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/bdronneau/memoriesbox/compare/v1.0.3...v1.1.0) (2023-02-20)
+
+
+### Features
+
+* **docker:** include db migrations in container ([363e2e9](https://github.com/bdronneau/memoriesbox/commit/363e2e9f0406be5e45eeeeb80aafb215ddb0a99b))
+
 ## [1.0.3](https://github.com/bdronneau/memoriesbox/compare/v1.0.2...v1.0.3) (2023-02-20)
 
 
