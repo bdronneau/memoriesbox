@@ -1,4 +1,5 @@
 BEGIN;
+CREATE SCHEMA mbox;
 CREATE SEQUENCE mbox.memories_seq;
 CREATE TABLE mbox.memories (
 	id integer NOT NULL DEFAULT nextval('mbox.memories_seq'),
