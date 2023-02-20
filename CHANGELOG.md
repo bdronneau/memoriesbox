@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/bdronneau/memoriesbox/compare/v1.0.2...v1.0.3) (2023-02-20)
+
+
+### Bug Fixes
+
+* **docker:** use short ref name for build ([f4d634c](https://github.com/bdronneau/memoriesbox/commit/f4d634c557cacc882e82a00e3329fb30d8d94cec))
+
 ## [1.0.2](https://github.com/bdronneau/memoriesbox/compare/v1.0.1...v1.0.2) (2023-02-20)
 
 
