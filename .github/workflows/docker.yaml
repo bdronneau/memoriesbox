@@ -27,5 +27,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/memoriesbox:${{ github.ref }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/memoriesbox:${{ github.ref_name }}
           platforms: linux/amd64,linux/arm64
