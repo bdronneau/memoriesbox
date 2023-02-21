@@ -2,7 +2,7 @@
 
 # Memories box
 
-Based on Bonjour poney mojo, this project is memories oriented.
+This app store your memories in postgres backend.
 
 ## Configuration
 
@@ -69,7 +69,6 @@ or
 ```shell script
 nerdctl build --platform=amd64,arm64 .
 ```
-
 
 ## Credits
 
