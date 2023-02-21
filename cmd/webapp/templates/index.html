@@ -124,8 +124,11 @@
 
     <main class="px-3">
       <h2>{{index . "content"}}</h2>
-      <p class="lead"><i>{{index . "author"}}</i> on {{index . "date"}}</p>
-
+      <p>
+        <i class="bi bi-person-rolodex"></i> <i>{{index . "author"}}</i>
+        <br/>
+        <i class="bi bi-calendar-date"></i> {{index . "date"}}
+      </p>
     </main>
 
     <footer class="mt-auto text-white-50">
