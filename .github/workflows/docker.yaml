@@ -29,3 +29,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/memoriesbox:${{ github.ref_name }}
           platforms: linux/amd64,linux/arm64
+      - name: Notify infrastructure
+        continue-on-error: true
+        run: |
+          curl --disable --silent --show-error --location --max-time 30 --header "X-Signature:sha1=$(printf "{}" | openssl dgst -sha1 -r -hmac "${{ secrets.FLUX_TOKEN }}"| awk '{print $1}')" --data "{}" "${{ secrets.FLUX_WEBHOOK_URL }}"
