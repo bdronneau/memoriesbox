@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.0](https://github.com/bdronneau/memoriesbox/compare/v1.2.0...v1.3.0) (2023-02-21)
+
+
+### 🚀 Features
+
+* **golang:** move to 1.20 ([f85ac5b](https://github.com/bdronneau/memoriesbox/commit/f85ac5b93e472f382ee53b0365433bf56fbd7712))
+* **index:** rewamp some informations and add favicon ([38c7b4f](https://github.com/bdronneau/memoriesbox/commit/38c7b4f3b138a009d056db19882e9a1ce1f30f04))
+
+
+### 🧰 Other
+
+* add some backlinks ([de1f5e2](https://github.com/bdronneau/memoriesbox/commit/de1f5e2db5dee2c2597967d6dcead9de9575d8c2))
+
+
+### 🐞 Bug Fixes
+
+* missing embed ([acf1586](https://github.com/bdronneau/memoriesbox/commit/acf15867eb5b04b8949dc7ba3f4cfe2112793bb5))
+
 ## [1.2.0](https://github.com/bdronneau/memoriesbox/compare/v1.1.1...v1.2.0) (2023-02-21)
 
 
