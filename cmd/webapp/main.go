@@ -17,7 +17,7 @@ import (
 	"github.com/peterbourgon/ff/v3"
 )
 
-//go:embed templates
+//go:embed templates static
 var content embed.FS
 
 func main() {

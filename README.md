@@ -69,3 +69,8 @@ or
 ```shell script
 nerdctl build --platform=amd64,arm64 .
 ```
+
+
+## Credits
+
+- Usage of [Memory loss icons created by Good Ware - Flaticon](https://www.flaticon.com/free-icons/memory-loss)
