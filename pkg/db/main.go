@@ -28,7 +28,7 @@ type Config struct {
 
 func GetConfig(fs *flag.FlagSet) Config {
 	return Config{
-		dbHost:     fs.String("db-host", "localhost", "DB Hostname"),
+		dbHost:     fs.String("db-host", "0.0.0.0", "DB Hostname"),
 		dbUser:     fs.String("db-user", "memoriesbox", "DB User"),
 		dbName:     fs.String("db-name", "memoriesbox", "DB Name"),
 		dbPassword: fs.String("db-password", "memoriesbox", "DB Password"),
