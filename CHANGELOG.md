@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.2.0](https://github.com/bdronneau/memoriesbox/compare/v1.1.1...v1.2.0) (2023-02-21)
+
+
+### 📚 Documentation
+
+* **README:** add badges ([e8f30a4](https://github.com/bdronneau/memoriesbox/commit/e8f30a453c20b7f03cffd9b794f22d185f8a2c5d))
+
+
+### ✨ Polish
+
+* **ci:** merge build and ci ([414749e](https://github.com/bdronneau/memoriesbox/commit/414749ec23ed5e4cb79bb82c708d40414ba4317c))
+* **indeapi:** change default binding on interfaces ([21029ab](https://github.com/bdronneau/memoriesbox/commit/21029abd06947a74b0b0d78ea70f92268ac0e87c))
+* **index:** move script declaration ([da786df](https://github.com/bdronneau/memoriesbox/commit/da786df72f3bf0037f5321bc9c6703badbee399f))
+* **release-please:** add changelog types ([e832461](https://github.com/bdronneau/memoriesbox/commit/e832461c03067f2a12b151b873e36bbaff99e7ee))
+
+
+### 🚀 Features
+
+* **github:** add files required for opensource ([89b5893](https://github.com/bdronneau/memoriesbox/commit/89b58932c1c257009291db0ffb4d3901aca98962))
+* **index:** formating of date and author ([e9cbbbc](https://github.com/bdronneau/memoriesbox/commit/e9cbbbc16cb65d6f149cd283714d018a2d3716a1))
+
+
+### 🧰 Other
+
+* **github:** init file ([69d5bcd](https://github.com/bdronneau/memoriesbox/commit/69d5bcdd9e9bcc19c02924ec98518f6830522db5))
+* **github:** wording ([750ea58](https://github.com/bdronneau/memoriesbox/commit/750ea58f8606e93d2122711b0bfa2610174e7457))
+
 ## [1.1.1](https://github.com/bdronneau/memoriesbox/compare/v1.1.0...v1.1.1) (2023-02-20)
 
 
