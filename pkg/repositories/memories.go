@@ -28,8 +28,6 @@ func (a *app) GetRandomMemories() (models.Memory, error) {
 		return models.Memory{}, err
 	}
 
-	a.logger.Debug(memories)
-
 	return models.Memory{
 		ID:      memories.ID,
 		Author:  memories.Author,
