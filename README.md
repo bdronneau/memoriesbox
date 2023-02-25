@@ -52,6 +52,18 @@ go run cmd/webapp/main.go
 golangci-lint run ./...
 ```
 
+### Tests
+
+Run all tests (need DB sidecar):
+```shell script
+go test ./...
+```
+
+Run without db sidecar
+```shell script
+go test $(go list ./... | grep -v memoriesbox/pkg/db/models)
+```
+
 ### Build
 
 ```shell script
