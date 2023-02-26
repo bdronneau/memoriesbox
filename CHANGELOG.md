@@ -1,5 +1,31 @@
 # Changelog
 
+## [1.4.0](https://github.com/bdronneau/memoriesbox/compare/v1.3.0...v1.4.0) (2023-02-26)
+
+
+### 📚 Documentation
+
+* **README:** wordin ([cff8fad](https://github.com/bdronneau/memoriesbox/commit/cff8fad2e55da93e1b647196a4ea047b6c074640))
+
+
+### 🚀 Features
+
+* **repositories:** init tests ([9b64503](https://github.com/bdronneau/memoriesbox/commit/9b64503ed122537b3831b361c8250af35d67a19a))
+
+
+### 🧰 Other
+
+* clean code ([8e54aa3](https://github.com/bdronneau/memoriesbox/commit/8e54aa36cef80f69bfd95797f41704ad52b3722b))
+* **repositories:** clean logger ([cdc8d77](https://github.com/bdronneau/memoriesbox/commit/cdc8d77613f6e0064b8f4fa56e7a3b043f1408cf))
+* trim line ([a0612c2](https://github.com/bdronneau/memoriesbox/commit/a0612c23429c56f6305a675519251b9c7e4b2b1a))
+
+
+### ✨ Polish
+
+* **ci:** add coverage ([b1d262e](https://github.com/bdronneau/memoriesbox/commit/b1d262e93d875913ce89e1b1f96b2069c16ec13d))
+* **github:** rename action ([5a4cee4](https://github.com/bdronneau/memoriesbox/commit/5a4cee4937f94c27c136c764a02defcf90041bf4))
+* **import:** rename module ([453e390](https://github.com/bdronneau/memoriesbox/commit/453e390d5d035bfc28abde403cd02034bdebe4ed))
+
 ## [1.3.0](https://github.com/bdronneau/memoriesbox/compare/v1.2.0...v1.3.0) (2023-02-21)
 
 
