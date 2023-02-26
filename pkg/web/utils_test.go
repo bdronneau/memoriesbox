@@ -22,7 +22,7 @@ func TestNewSimpleResponse(t *testing.T) {
 
 	expected := `{"code":200,"message":"test message"}`
 	if expected != strings.TrimRight(rec.Body.String(), "\n") {
-		t.Errorf("expected %q but got %q", expected, rec.Body.String())
+		t.Errorf(EXPECT_CONTENT, expected, rec.Body.String())
 	}
 }
 
@@ -44,6 +44,6 @@ func TestNewError(t *testing.T) {
 
 	expectedBody := `{"code":500,"message":"test error"}`
 	if expectedBody != strings.TrimRight(rec.Body.String(), "\n") {
-		t.Errorf("expected %q but got %q", expectedBody, rec.Body.String())
+		t.Errorf(EXPECT_CONTENT, expectedBody, rec.Body.String())
 	}
 }

@@ -16,6 +16,9 @@ import (
 	"go.uber.org/zap/zaptest"
 )
 
+const EXPECT_STATUS_CODE = "expected status code %d but got %d"
+const EXPECT_CONTENT = "expected response body to contain %q but got %q"
+
 func bootstrapWebApp(t *testing.T, repoApp repositories.App) App {
 	var (
 		address = "localhost"
@@ -54,7 +57,7 @@ func TestGetRandomMemories(t *testing.T) {
 	webApp.GetEcho().ServeHTTP(rec, req)
 
 	if rec.Code != http.StatusOK {
-		t.Errorf("expected status code %d but got %d", http.StatusOK, rec.Code)
+		t.Errorf(EXPECT_STATUS_CODE, http.StatusOK, rec.Code)
 	}
 
 	expectedAuthor := "John Doe"
@@ -80,12 +83,12 @@ func TestLive(t *testing.T) {
 	webApp.GetEcho().ServeHTTP(rec, req)
 
 	if rec.Code != http.StatusOK {
-		t.Errorf("expected status code %d but got %d", http.StatusOK, rec.Code)
+		t.Errorf(EXPECT_STATUS_CODE, http.StatusOK, rec.Code)
 	}
 
 	expected := "I'm live good"
 	if !strings.Contains(rec.Body.String(), expected) {
-		t.Errorf("expected response body to contain %q but got %q", expected, rec.Body.String())
+		t.Errorf(EXPECT_CONTENT, expected, rec.Body.String())
 	}
 }
 
@@ -107,12 +110,12 @@ func TestCountMemories(t *testing.T) {
 	webApp.GetEcho().ServeHTTP(rec, req)
 
 	if rec.Code != http.StatusOK {
-		t.Errorf("expected status code %d but got %d", http.StatusOK, rec.Code)
+		t.Errorf(EXPECT_STATUS_CODE, http.StatusOK, rec.Code)
 	}
 
 	expected := "2"
 	if !strings.Contains(rec.Body.String(), expected) {
-		t.Errorf("expected response body to contain %q but got %q", expected, rec.Body.String())
+		t.Errorf(EXPECT_CONTENT, expected, rec.Body.String())
 	}
 }
 
@@ -131,11 +134,11 @@ func TestVersionHandler(t *testing.T) {
 	webApp.GetEcho().ServeHTTP(rec, req)
 
 	if rec.Code != http.StatusOK {
-		t.Errorf("expected status code %d but got %d", http.StatusOK, rec.Code)
+		t.Errorf(EXPECT_STATUS_CODE, http.StatusOK, rec.Code)
 	}
 
 	expected := "development"
 	if !strings.Contains(rec.Body.String(), expected) {
-		t.Errorf("expected response body to contain %q but got %q", expected, rec.Body.String())
+		t.Errorf(EXPECT_CONTENT, expected, rec.Body.String())
 	}
 }
