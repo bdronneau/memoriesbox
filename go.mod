@@ -3,6 +3,7 @@ module memoriesbox
 go 1.20
 
 require (
+	github.com/DATA-DOG/go-sqlmock v1.4.1
 	github.com/friendsofgo/errors v0.9.2
 	github.com/jackc/pgx/v4 v4.18.0
 	github.com/kat-co/vala v0.0.0-20170210184112-42e1d8b61f12
@@ -17,6 +18,7 @@ require (
 )
 
 require (
+	github.com/benbjohnson/clock v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/gofrs/uuid v4.2.0+incompatible // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
