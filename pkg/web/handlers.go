@@ -35,7 +35,6 @@ func (a *app) countMemories(c echo.Context) error {
 }
 
 func (a *app) getMemories(c echo.Context) error {
-
 	memory, err := a.repositories.GetRandomMemories()
 	if err != nil {
 		a.logger.Errorf("Can not retrieve a random memory %v", err)
