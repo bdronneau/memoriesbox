@@ -10,12 +10,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func assertStringsEqual(t *testing.T, expected, actual string) {
-	if expected != actual {
-		t.Errorf("expected %q but got %q", expected, actual)
-	}
-}
-
 func TestNewSimpleResponse(t *testing.T) {
 	// create a new echo instance
 	e := echo.New()
