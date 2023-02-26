@@ -2,7 +2,6 @@ package web
 
 import (
 	"context"
-	"embed"
 	"flag"
 	"fmt"
 	"html/template"
@@ -17,6 +16,7 @@ import (
 
 // App of package
 type App interface {
+	GetEcho() *echo.Echo
 	Start()
 	Shutdown(context.Context) error
 }
@@ -43,7 +43,7 @@ func GetConfig(fs *flag.FlagSet) Config {
 	}
 }
 
-func New(config Config, fs embed.FS, loggerApp logger.App, repoApp repositories.App) App {
+func New(config Config, fs fs.FS, loggerApp logger.App, repoApp repositories.App) App {
 	port := *config.port
 	done := make(chan struct{})
 
@@ -112,4 +112,8 @@ func (a *app) ConfigureEcho(debug bool, embedFs fs.FS) *echo.Echo {
 	e.GET("/", a.getMemories)
 
 	return e
+}
+
+func (a *app) GetEcho() *echo.Echo {
+	return a.echo
 }
