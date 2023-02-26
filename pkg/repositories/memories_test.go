@@ -1,11 +1,12 @@
 package repositories
 
 import (
-	dbMemories "memoriesbox/pkg/db"
-	"memoriesbox/pkg/logger"
-	"memoriesbox/pkg/repositories/models"
 	"testing"
 	"time"
+
+	dbMemories "github.com/bdronneau/memoriesbox/pkg/db"
+	"github.com/bdronneau/memoriesbox/pkg/logger"
+	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
 
 	"github.com/DATA-DOG/go-sqlmock"
 	"go.uber.org/zap/zaptest"

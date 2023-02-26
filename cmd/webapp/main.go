@@ -5,14 +5,18 @@ import (
 	"embed"
 	"flag"
 	"log"
-	"memoriesbox/pkg/db"
-	"memoriesbox/pkg/logger"
-	"memoriesbox/pkg/repositories"
-	"memoriesbox/pkg/web"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/bdronneau/memoriesbox/pkg/web"
+
+	"github.com/bdronneau/memoriesbox/pkg/repositories"
+
+	"github.com/bdronneau/memoriesbox/pkg/logger"
+
+	"github.com/bdronneau/memoriesbox/pkg/db"
 
 	"github.com/peterbourgon/ff/v3"
 )

@@ -3,9 +3,10 @@ package repositories
 import (
 	"database/sql"
 	"flag"
-	"memoriesbox/pkg/db"
-	"memoriesbox/pkg/logger"
-	"memoriesbox/pkg/repositories/models"
+
+	"github.com/bdronneau/memoriesbox/pkg/db"
+	"github.com/bdronneau/memoriesbox/pkg/logger"
+	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
 
 	"go.uber.org/zap"
 )

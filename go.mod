@@ -1,4 +1,4 @@
-module memoriesbox
+module github.com/bdronneau/memoriesbox
 
 go 1.20
 

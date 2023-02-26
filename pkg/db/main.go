@@ -4,8 +4,9 @@ import (
 	"database/sql"
 	"flag"
 	"fmt"
-	"memoriesbox/pkg/logger"
 	"os"
+
+	"github.com/bdronneau/memoriesbox/pkg/logger"
 
 	"go.uber.org/zap"
 

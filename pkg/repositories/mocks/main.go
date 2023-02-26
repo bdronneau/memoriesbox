@@ -5,7 +5,7 @@
 package mock_repositories
 
 import (
-	models "memoriesbox/pkg/repositories/models"
+	models "github.com/bdronneau/memoriesbox/pkg/repositories/models"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"

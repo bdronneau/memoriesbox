@@ -1,15 +1,16 @@
 package web
 
 import (
-	"memoriesbox/pkg/logger"
-	"memoriesbox/pkg/repositories"
-	repositoriesMock "memoriesbox/pkg/repositories/mocks"
-	"memoriesbox/pkg/repositories/models"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"strings"
 	"testing"
+
+	"github.com/bdronneau/memoriesbox/pkg/logger"
+	"github.com/bdronneau/memoriesbox/pkg/repositories"
+	repositoriesMock "github.com/bdronneau/memoriesbox/pkg/repositories/mocks"
+	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
 
 	"github.com/golang/mock/gomock"
 	"go.uber.org/zap/zaptest"

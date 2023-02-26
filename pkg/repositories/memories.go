@@ -3,9 +3,8 @@ package repositories
 import (
 	"context"
 
-	dbModels "memoriesbox/pkg/db/models"
-	"memoriesbox/pkg/repositories/models"
-
+	dbModels "github.com/bdronneau/memoriesbox/pkg/db/models"
+	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
