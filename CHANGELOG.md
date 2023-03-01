@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.4.1](https://github.com/bdronneau/memoriesbox/compare/v1.4.0...v1.4.1) (2023-02-27)
+
+
+### 🐞 Bug Fixes
+
+* **sonarcloud:** wrong directive ([f589de1](https://github.com/bdronneau/memoriesbox/commit/f589de1929691f19564caa0c48bc3b8375730c5e))
+
+
+### ✨ Polish
+
+* **tests:** use constants ([b7f72f1](https://github.com/bdronneau/memoriesbox/commit/b7f72f1bc1dbe02db906cb67253a973c5ae6efe1))
+* **tools:** do not take care of tests files ([306c161](https://github.com/bdronneau/memoriesbox/commit/306c161fbdb6e4ecbb5e017c4b151b5294ab3872))
+
+
+### 🧰 Other
+
+* bump github.com/DATA-DOG/go-sqlmock from 1.4.1 to 1.5.0 ([cc3c516](https://github.com/bdronneau/memoriesbox/commit/cc3c516b449c4699db44a56a5c4d9d90afa8382e))
+* bump github.com/labstack/echo/v4 from 4.10.1 to 4.10.2 ([1672540](https://github.com/bdronneau/memoriesbox/commit/16725401388f3f02fd91c346739f874ede8086dc))
+* **dockerfile:** upper case ([3709fc2](https://github.com/bdronneau/memoriesbox/commit/3709fc2cbb04b3231adc7e491ee7ca33dd4d098b))
+
 ## [1.4.0](https://github.com/bdronneau/memoriesbox/compare/v1.3.0...v1.4.0) (2023-02-26)
 
 
