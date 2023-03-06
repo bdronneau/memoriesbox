@@ -1,4 +1,5 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bdronneau_memoriesbox&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bdronneau_memoriesbox) [![CI](https://github.com/bdronneau/memoriesbox/actions/workflows/ci.yaml/badge.svg)](https://github.com/bdronneau/memoriesbox/actions/workflows/ci.yaml) ![Docker Pulls](https://img.shields.io/docker/pulls/bdronneau/memoriesbox) [![docker Build](https://github.com/bdronneau/memoriesbox/actions/workflows/docker.yaml/badge.svg)](https://github.com/bdronneau/memoriesbox/actions/workflows/docker.yaml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbdronneau%2Fmemoriesbox.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbdronneau%2Fmemoriesbox?ref=badge_shield)
 
 # Memories box
 
@@ -85,3 +86,7 @@ nerdctl build --platform=amd64,arm64 .
 ## Credits
 
 - Usage of [Memory loss icons created by Good Ware - Flaticon](https://www.flaticon.com/free-icons/memory-loss)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbdronneau%2Fmemoriesbox.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbdronneau%2Fmemoriesbox?ref=badge_large)
