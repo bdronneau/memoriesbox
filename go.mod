@@ -13,7 +13,7 @@ require (
 	github.com/peterbourgon/ff/v3 v3.3.0
 	github.com/spf13/viper v1.15.0
 	github.com/volatiletech/randomize v0.0.1
-	github.com/volatiletech/sqlboiler/v4 v4.14.1
+	github.com/volatiletech/sqlboiler/v4 v4.14.2
 	github.com/volatiletech/strmangle v0.0.4
 	go.uber.org/zap v1.24.0
 )
