@@ -10,7 +10,7 @@ require (
 	github.com/kat-co/vala v0.0.0-20170210184112-42e1d8b61f12
 	github.com/labstack/echo/v4 v4.10.2
 	github.com/lib/pq v1.10.9
-	github.com/peterbourgon/ff/v3 v3.3.1
+	github.com/peterbourgon/ff/v3 v3.3.2
 	github.com/spf13/viper v1.16.0
 	github.com/volatiletech/randomize v0.0.1
 	github.com/volatiletech/sqlboiler/v4 v4.14.2
