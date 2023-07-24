@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.2](https://github.com/bdronneau/memoriesbox/compare/v1.4.1...v1.4.2) (2023-07-24)
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v4 from 4.18.0 to 4.18.1 ([4983027](https://github.com/bdronneau/memoriesbox/commit/4983027485a84c54a272d89518c2838b399825e7))
+* bump github.com/labstack/echo/v4 from 4.10.2 to 4.11.1 ([ced59f3](https://github.com/bdronneau/memoriesbox/commit/ced59f3139b3517e872b6e04fbb782b0d4b06df5))
+* bump github.com/lib/pq from 1.10.7 to 1.10.8 ([90755f6](https://github.com/bdronneau/memoriesbox/commit/90755f6b89de431b2a36290e12c75124ab186c3e))
+* bump github.com/lib/pq from 1.10.8 to 1.10.9 ([ce2a29e](https://github.com/bdronneau/memoriesbox/commit/ce2a29ec2e5e7b142e2c2d71abafa8c600b940f4))
+* bump github.com/peterbourgon/ff/v3 from 3.3.0 to 3.3.1 ([a4730c9](https://github.com/bdronneau/memoriesbox/commit/a4730c91d5c9ffa143dad8b6c401ebe0c58e0f93))
+* bump github.com/peterbourgon/ff/v3 from 3.3.1 to 3.3.2 ([f397dac](https://github.com/bdronneau/memoriesbox/commit/f397dac9d363883f69bc61a5851c4b0e8d5614d8))
+* bump github.com/peterbourgon/ff/v3 from 3.3.2 to 3.4.0 ([b879748](https://github.com/bdronneau/memoriesbox/commit/b879748fef46bcca98ba5db0e0d031e007b9d39b))
+* bump github.com/spf13/viper from 1.15.0 to 1.16.0 ([d5d6c76](https://github.com/bdronneau/memoriesbox/commit/d5d6c76ad7868bd92cf0b3d6e1ee6e2b2225ae4a))
+* bump github.com/volatiletech/sqlboiler/v4 from 4.14.1 to 4.14.2 ([7dc0a05](https://github.com/bdronneau/memoriesbox/commit/7dc0a0529234f9f0966526b8dc4f3922a7671233))
+* bump github.com/volatiletech/strmangle from 0.0.4 to 0.0.5 ([c4a0f50](https://github.com/bdronneau/memoriesbox/commit/c4a0f509799545a5785f0a08a786a514fdd29dcf))
+* update license ([b177ba2](https://github.com/bdronneau/memoriesbox/commit/b177ba24fa87fbe1b50ef552c3ae47e6ed68b4ae))
+
 ## [1.4.1](https://github.com/bdronneau/memoriesbox/compare/v1.4.0...v1.4.1) (2023-02-27)
 
 
