@@ -20,7 +20,7 @@ Check [env_example](./.env_example) for main variables.
 
 ### Application dependencies
 
-Dependencies are handle in docker.
+You can use docker with docker-compose to handle deps.
 
 ```shell script
 docker-compose -f docker-compose-dev.yml up -d
@@ -32,55 +32,11 @@ In order to migrate down you can run:
 docker-compose -f docker-compose-dev.yml up --scale migrate_up=0 --scale migrate_down=1 -d
 ```
 
-### SQLBoiler
+### Usage
 
-Run [SQLBoiler](github.com/volatiletech/sqlboiler) to update generated models
+Run `make help` to have all targets with description
 
-```shell script
-PGPASSWORD=passwordToChange sqlboiler psql
-```
-
-### Run
-
-```shell script
-go run cmd/webapp/main.go
-```
-
-### Lint
-
-```shell script
-golangci-lint run ./...
-```
-
-### Tests
-
-Run all tests (need DB sidecar):
-```shell script
-go test ./...
-```
-
-Run without db sidecar
-```shell script
-go test $(go list ./... | grep -v memoriesbox/pkg/db/models)
-```
-
-### Build
-
-```shell script
-CGO_ENABLED=0 go build -ldflags="-s -w" -installsuffix nocgo -o bin/memoriesbox cmd/webapp/main.go
-```
-
-### Docker build
-
-```shell sceript
-docker buildx build --platform linux/amd64,linux/arm,linux/arm64 .
-```
-
-or
-
-```shell script
-nerdctl build --platform=amd64,arm64 .
-```
+Copy `.env_example` to `.env` with your custom values.
 
 ## Credits
 
