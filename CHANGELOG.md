@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/bdronneau/memoriesbox/compare/v1.4.2...v1.4.3) (2023-08-07)
+
+
+### 🧰 Other
+
+* bump go.uber.org/zap from 1.24.0 to 1.25.0 ([2e0bd2f](https://github.com/bdronneau/memoriesbox/commit/2e0bd2fe74eb6dc09c885c7bfb19d1de6f4e2c14))
+
 ## [1.4.2](https://github.com/bdronneau/memoriesbox/compare/v1.4.1...v1.4.2) (2023-07-24)
 
 
