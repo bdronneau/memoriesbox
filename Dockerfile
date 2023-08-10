@@ -28,6 +28,6 @@ ENTRYPOINT [ "/memoriesbox" ]
 
 COPY --from=fetcher /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=migrate /usr/local/bin/migrate /usr/local/bin/
-COPY --from=fetcher --chown=2000:2000 /app/zoneinfo.zip /
+COPY --from=fetcher --chown=2000:2000 --chmod=0600 /app/zoneinfo.zip /
 COPY --from=builder --chown=2000:2000 /app/bin/${APP_NAME} /
 COPY --from=builder --chown=2000:2000 /app/db /opt
