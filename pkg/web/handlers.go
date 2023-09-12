@@ -1,9 +1,11 @@
 package web
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 
 	"github.com/labstack/echo/v4"
 )
@@ -46,4 +48,51 @@ func (a *app) getMemories(c echo.Context) error {
 		"date":    memory.Append,
 		"author":  memory.Author,
 	})
+}
+
+func (a *app) addAPIMemory(c echo.Context) error {
+	var err error
+
+	author := c.FormValue("author")
+	if author == "" {
+		err = formValidationErrors("No author", err)
+	}
+
+	dateRaw := c.FormValue("date")
+	if dateRaw == "" {
+		err = formValidationErrors("No date", err)
+	}
+
+	date, errTimeParse := time.Parse(time.DateOnly, dateRaw)
+	if errTimeParse != nil {
+		err = formValidationErrors("Date invalid format", err)
+	}
+
+	quote := c.FormValue("quote")
+	if quote == "" {
+		err = formValidationErrors("No quote", err)
+	}
+
+	if err != nil {
+		return c.Render(http.StatusBadRequest, "memory_add.html", map[string]interface{}{
+			"messages": err.Error(),
+		})
+	}
+
+	err = a.repositories.AddMemory(quote, author, date)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, fmt.Sprintf("%s", err.Error()))
+	}
+
+	a.logger.Debugf("Quote create %s/%s/%s", author, date, quote)
+
+	return c.Redirect(301, "/")
+}
+
+func formValidationErrors(message string, err error) error {
+	if err == nil {
+		return errors.New(message)
+	}
+
+	return errors.Join(err, errors.New(message))
 }

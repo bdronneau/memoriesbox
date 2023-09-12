@@ -1,6 +1,7 @@
 package web
 
 import (
+	"errors"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -140,5 +141,40 @@ func TestVersionHandler(t *testing.T) {
 	expected := "development"
 	if !strings.Contains(rec.Body.String(), expected) {
 		t.Errorf(EXPECT_CONTENT, expected, rec.Body.String())
+	}
+}
+
+func TestFormValidationErrors(t *testing.T) {
+	testCases := []struct {
+		name        string
+		message     string
+		err         error
+		expectedErr error
+	}{
+		{
+			name:        "NoError",
+			message:     "Validation failed",
+			err:         nil,
+			expectedErr: errors.New("Validation failed"),
+		},
+		{
+			name:        "WithError",
+			message:     "Validation failed",
+			err:         errors.New("Specific error"),
+			expectedErr: errors.Join(errors.New("Specific error"), errors.New("Validation failed")),
+		},
+	}
+
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+			result := formValidationErrors(tc.message, tc.err)
+			if result == nil && tc.expectedErr != nil {
+				t.Errorf("Expected an error, but got nil")
+			} else if result != nil && tc.expectedErr == nil {
+				t.Errorf("Expected no error, but got: %v", result)
+			} else if result != nil && tc.expectedErr != nil && result.Error() != tc.expectedErr.Error() {
+				t.Errorf("Expected error message '%s', but got '%s'", tc.expectedErr.Error(), result.Error())
+			}
+		})
 	}
 }
