@@ -41,3 +41,4 @@ Copy `.env_example` to `.env` with your custom values.
 ## Credits
 
 - Usage of [Memory loss icons created by Good Ware - Flaticon](https://www.flaticon.com/free-icons/memory-loss)
+- Usage of [bulma-templates instaAlbum](https://bulmatemplates.github.io/bulma-templates/templates/instaAlbum.html) by Jeremy Thomas

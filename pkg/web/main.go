@@ -87,7 +87,7 @@ func (a *app) ConfigureEcho(debug bool, embedFs fs.FS) *echo.Echo {
 	e.HidePort = true
 	e.HideBanner = true
 
-	tpl, err := template.ParseFS(embedFs, "templates/*.html")
+	tpl, err := template.ParseFS(embedFs, "templates/partials/*.html", "templates/*.html")
 	if err != nil {
 		a.logger.Fatal("Can not read templates/*.html")
 	}
@@ -112,6 +112,7 @@ func (a *app) ConfigureEcho(debug bool, embedFs fs.FS) *echo.Echo {
 	e.POST("/api/memories/add", a.addAPIMemory)
 
 	e.GET("/", a.getMemories)
+	e.GET("/add", a.addMemory)
 
 	return e
 }

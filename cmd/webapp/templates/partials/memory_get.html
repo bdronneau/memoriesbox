@@ -1,0 +1,13 @@
+{{define "memory_get"}}
+<p class="title">
+  {{index . "content"}}
+</p>
+<p class="subtitle">
+  {{index . "author"}}
+</p>
+<p>
+  {{range .tags}}
+  <span class="tag is-white">#{{.}}</span>
+  {{end}}
+</p>
+{{end}}

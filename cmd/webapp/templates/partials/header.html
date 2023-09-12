@@ -1,0 +1,34 @@
+{{define "socials"}}
+    <meta content="#17292F" name="theme-color">
+    <meta content="#17292F" name="apple-mobile-web-app-status-bar-style">
+    <meta content="summary" name="twitter:card">
+    <meta content="@bdronneau" name="twitter:creator">
+    <meta content="MemoriesBox" name="twitter:title">
+    <meta content="Just a rollback in time" name="twitter:description">
+    <meta content="website" property="og:type">
+    <meta content="MemoriesBox" property="og:title">
+    <meta content="Just a rollback in time" property="og:description">
+{{end}}
+
+{{define "head"}}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Just a simple application to remember some memories">
+  <meta name="author" content="Bastien Dronneau">
+
+  <title>>MemoriesBox | {{ template "subtitle" . }}</title>
+
+  <!-- Source icons https://www.flaticon.com/free-icons/memory-loss -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  <link rel="mask-icon" color="#5bbad5" href="/static/apple-touch-icon.png">
+  <link rel="manifest" href="/static/site.webmanifest">
+
+  {{template "socials"}}
+
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+{{end}}

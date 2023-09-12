@@ -50,6 +50,18 @@ func (a *app) getMemories(c echo.Context) error {
 	})
 }
 
+func (a *app) addMemory(c echo.Context) error {
+	var messages []string
+	messages = []string{"miaou", "waou"}
+	err := c.Render(http.StatusOK, "memory_add.html", map[string]interface{}{
+		"messages": messages,
+	})
+
+	a.logger.Errorf("Can not render %v", err)
+
+	return err
+}
+
 func (a *app) addAPIMemory(c echo.Context) error {
 	var err error
 

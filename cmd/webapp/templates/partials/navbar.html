@@ -1,0 +1,47 @@
+{{define "navbar"}}
+<!-- Hero head: will stick at the top -->
+<div class="hero-head">
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="/static/android-chrome-192x192.png" alt="Logo">
+        </a>
+        <span class="navbar-burger" data-target="navbarMenuHeroC">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroC" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-active" href="/">
+            <i class="fa-solid fa-shuffle"></i> Another ?
+          </a>
+          <a class="navbar-item is-active" href="/add">
+            <i class="fa-solid fa-plus"></i> Add
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+{{end}}
+
+{{define "navbar_script"}}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  });
+</script>
+{{end}}
