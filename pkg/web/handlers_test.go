@@ -12,7 +12,7 @@ import (
 	"github.com/bdronneau/memoriesbox/pkg/mocks"
 	"github.com/bdronneau/memoriesbox/pkg/repositories"
 	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
-	"github.com/golang/mock/gomock"
+	"go.uber.org/mock/gomock"
 
 	"go.uber.org/zap/zaptest"
 )

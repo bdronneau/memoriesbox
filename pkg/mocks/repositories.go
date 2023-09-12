@@ -6,9 +6,10 @@ package mocks
 
 import (
 	reflect "reflect"
+	time "time"
 
 	models "github.com/bdronneau/memoriesbox/pkg/repositories/models"
-	gomock "github.com/golang/mock/gomock"
+	gomock "go.uber.org/mock/gomock"
 )
 
 // Repositories is a mock of App interface.
@@ -32,6 +33,20 @@ func NewRepositories(ctrl *gomock.Controller) *Repositories {
 // EXPECT returns an object that allows the caller to indicate expected use.
 func (m *Repositories) EXPECT() *RepositoriesMockRecorder {
 	return m.recorder
+}
+
+// AddMemory mocks base method.
+func (m *Repositories) AddMemory(quote, author string, date time.Time) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "AddMemory", quote, author, date)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// AddMemory indicates an expected call of AddMemory.
+func (mr *RepositoriesMockRecorder) AddMemory(quote, author, date interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddMemory", reflect.TypeOf((*Repositories)(nil).AddMemory), quote, author, date)
 }
 
 // CountMemories mocks base method.

@@ -5,7 +5,6 @@ go 1.20
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
 	github.com/friendsofgo/errors v0.9.2
-	github.com/golang/mock v1.6.0
 	github.com/jackc/pgx/v4 v4.18.1
 	github.com/kat-co/vala v0.0.0-20170210184112-42e1d8b61f12
 	github.com/labstack/echo/v4 v4.11.1
@@ -15,6 +14,7 @@ require (
 	github.com/volatiletech/randomize v0.0.1
 	github.com/volatiletech/sqlboiler/v4 v4.15.0
 	github.com/volatiletech/strmangle v0.0.5
+	go.uber.org/mock v0.2.0
 	go.uber.org/zap v1.25.0
 )
 
