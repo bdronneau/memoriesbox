@@ -9,11 +9,11 @@ import (
 	"testing"
 
 	"github.com/bdronneau/memoriesbox/pkg/logger"
+	"github.com/bdronneau/memoriesbox/pkg/mocks"
 	"github.com/bdronneau/memoriesbox/pkg/repositories"
-	repositoriesMock "github.com/bdronneau/memoriesbox/pkg/repositories/mocks"
 	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
-
 	"github.com/golang/mock/gomock"
+
 	"go.uber.org/zap/zaptest"
 )
 
@@ -39,7 +39,7 @@ func TestGetRandomMemories(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
-	repoApp := repositoriesMock.NewMockApp(ctrl)
+	repoApp := mocks.NewRepositories(ctrl)
 
 	expectedMemory := models.Memory{
 		ID:      1,
@@ -73,7 +73,7 @@ func TestLive(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
-	repoApp := repositoriesMock.NewMockApp(ctrl)
+	repoApp := mocks.NewRepositories(ctrl)
 
 	webApp := bootstrapWebApp(t, repoApp)
 	// create a new http request
@@ -97,7 +97,7 @@ func TestCountMemories(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
-	repoApp := repositoriesMock.NewMockApp(ctrl)
+	repoApp := mocks.NewRepositories(ctrl)
 
 	var count int64 = 2
 	repoApp.EXPECT().CountMemories().Return(count)
@@ -124,7 +124,7 @@ func TestVersionHandler(t *testing.T) {
 	ctrl := gomock.NewController(t)
 	defer ctrl.Finish()
 
-	repoApp := repositoriesMock.NewMockApp(ctrl)
+	repoApp := mocks.NewRepositories(ctrl)
 
 	webApp := bootstrapWebApp(t, repoApp)
 	// create a new http request
