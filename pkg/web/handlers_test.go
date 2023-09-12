@@ -22,14 +22,16 @@ const EXPECT_CONTENT = "expected response body to contain %q but got %q"
 
 func bootstrapWebApp(t *testing.T, repoApp repositories.App) App {
 	var (
-		address = "localhost"
-		debug   = false
-		port    = 1080
+		address       = "localhost"
+		debug         = false
+		port          = 1080
+		featAddMemory = true
 	)
 	webConfig := Config{
-		address: &address,
-		debug:   &debug,
-		port:    &port,
+		address:       &address,
+		debug:         &debug,
+		port:          &port,
+		featAddMemory: &featAddMemory,
 	}
 
 	return New(webConfig, os.DirFS("../../cmd/webapp"), logger.App{Sugar: zaptest.NewLogger(t).Sugar()}, repoApp)

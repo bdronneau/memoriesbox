@@ -38,6 +38,10 @@ Run `make help` to have all targets with description
 
 Copy `.env_example` to `.env` with your custom values.
 
+### Security
+
+In order to add memory, there is an interface under `/add`, this will `POST` on `/api/memories/add` ** WITHOUT** authentification do necessary protection. You can disable add interface with `MEMORIESBOX_FEAT_ADD_MEMORY=false`
+
 ## Credits
 
 - Usage of [Memory loss icons created by Good Ware - Flaticon](https://www.flaticon.com/free-icons/memory-loss)
