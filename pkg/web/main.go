@@ -31,16 +31,18 @@ type app struct {
 }
 
 type Config struct {
-	address *string
-	debug   *bool
-	port    *int
+	address       *string
+	debug         *bool
+	port          *int
+	featAddMemory *bool
 }
 
 func GetConfig(fs *flag.FlagSet) Config {
 	return Config{
-		address: fs.String("api-address", "localhost", "API address"),
-		debug:   fs.Bool("api-debug", false, "API Debug mode"),
-		port:    fs.Int("api-port", 1080, "API Port"),
+		address:       fs.String("api-address", "localhost", "API address"),
+		debug:         fs.Bool("api-debug", false, "API Debug mode"),
+		port:          fs.Int("api-port", 1080, "API Port"),
+		featAddMemory: fs.Bool("feat-add-memory", true, "Interface to add memory"),
 	}
 }
 
@@ -61,7 +63,7 @@ func New(config Config, fs fs.FS, loggerApp logger.App, repoApp repositories.App
 		logger:        loggerApp.Sugar,
 	}
 
-	app.echo = app.ConfigureEcho(*config.debug, fs)
+	app.echo = app.ConfigureEcho(*config.debug, fs, *config.featAddMemory)
 
 	return app
 }
@@ -81,13 +83,13 @@ func (a *app) Shutdown(ctx context.Context) error {
 	return a.echo.Shutdown(ctx)
 }
 
-func (a *app) ConfigureEcho(debug bool, embedFs fs.FS) *echo.Echo {
+func (a *app) ConfigureEcho(debug bool, embedFs fs.FS, featAddMemory bool) *echo.Echo {
 	e := echo.New()
 	e.Debug = debug
 	e.HidePort = true
 	e.HideBanner = true
 
-	tpl, err := template.ParseFS(embedFs, "templates/*.html")
+	tpl, err := template.ParseFS(embedFs, "templates/partials/*.html", "templates/*.html")
 	if err != nil {
 		a.logger.Fatal("Can not read templates/*.html")
 	}
@@ -111,6 +113,11 @@ func (a *app) ConfigureEcho(debug bool, embedFs fs.FS) *echo.Echo {
 	e.GET("/api/memories/count", a.countMemories)
 
 	e.GET("/", a.getMemories)
+
+	if featAddMemory {
+		e.POST("/api/memories/add", a.addAPIMemory)
+		e.GET("/add", a.addMemory)
+	}
 
 	return e
 }

@@ -3,6 +3,7 @@ package repositories
 import (
 	"database/sql"
 	"flag"
+	"time"
 
 	"github.com/bdronneau/memoriesbox/pkg/db"
 	"github.com/bdronneau/memoriesbox/pkg/logger"
@@ -11,8 +12,11 @@ import (
 	"go.uber.org/zap"
 )
 
+//go:generate mockgen -source main.go -destination ../mocks/repositories.go -mock_names App=Repositories -package mocks
+
 // App of package
 type App interface {
+	AddMemory(quote string, author string, date time.Time) error
 	CountMemories() int64
 	GetRandomMemories() (models.Memory, error)
 	PingDB() error
