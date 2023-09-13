@@ -51,8 +51,7 @@ func (a *app) getMemories(c echo.Context) error {
 }
 
 func (a *app) addMemory(c echo.Context) error {
-	var messages []string
-	messages = []string{"miaou", "waou"}
+	messages := []string{"miaou", "waou"}
 	err := c.Render(http.StatusOK, "memory_add.html", map[string]interface{}{
 		"messages": messages,
 	})
@@ -93,7 +92,7 @@ func (a *app) addAPIMemory(c echo.Context) error {
 
 	err = a.repositories.AddMemory(quote, author, date)
 	if err != nil {
-		return c.String(http.StatusInternalServerError, fmt.Sprintf("%s", err.Error()))
+		return c.String(http.StatusInternalServerError, fmt.Sprintf("%v", err.Error()))
 	}
 
 	a.logger.Debugf("Quote create %s/%s/%s", author, date, quote)
