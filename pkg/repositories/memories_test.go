@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"context"
+	"database/sql"
 	"testing"
 	"time"
 
@@ -94,8 +95,14 @@ func (s *Suite) TestCreateAndRetrieve() {
 		assert.Equal(s.T(), int64(0), count, "Expected to have a no memory in DB")
 	})
 
+	s.Run("Random failed", func() {
+		_, err := s.repoApp.GetRandomMemories()
+		assert.Equal(s.T(), err, sql.ErrNoRows)
+	})
+
 	s.Run("complete workflow", func() {
-		s.repoApp.AddMemory("Doe is not my lastname", "John", time.Date(2022, 12, 12, 0, 0, 0, 0, time.UTC))
+		err := s.repoApp.AddMemory("Doe is not my lastname", "John", time.Date(2022, 12, 12, 0, 0, 0, 0, time.UTC))
+		assert.NoError(s.T(), err)
 
 		count, err := s.repoApp.CountMemories()
 		assert.NoError(s.T(), err)
