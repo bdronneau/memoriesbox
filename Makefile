@@ -49,6 +49,11 @@ go-mocks:
 go-tests:
 	go test $(PACKAGES)
 
+## go-tests-coverage: run test on golang with cover output
+.PHONY: go-tests-coverage
+go-tests-coverage:
+	go test -coverprofile=cover.out $(PACKAGES) && go tool cover -html=cover.out
+
 ## go-tests-dbless: run test without DB
 .PHONY: v
 go-tests-dbless:
