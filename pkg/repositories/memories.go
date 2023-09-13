@@ -10,15 +10,15 @@ import (
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
-func (a *app) CountMemories() int64 {
+func (a *app) CountMemories() (int64, error) {
 	a.logger.Debug("Count memories")
 
 	count, err := dbModels.Memories().Count(context.Background(), a.DB)
 	if err != nil {
-		a.logger.Fatal(err)
+		return -1, err
 	}
 
-	return count
+	return count, nil
 }
 
 func (a *app) GetRandomMemories() (models.Memory, error) {

@@ -17,7 +17,7 @@ import (
 // App of package
 type App interface {
 	AddMemory(quote string, author string, date time.Time) error
-	CountMemories() int64
+	CountMemories() (int64, error)
 	GetRandomMemories() (models.Memory, error)
 	PingDB() error
 }

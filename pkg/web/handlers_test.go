@@ -102,7 +102,7 @@ func TestCountMemories(t *testing.T) {
 	repoApp := mocks.NewRepositories(ctrl)
 
 	var count int64 = 2
-	repoApp.EXPECT().CountMemories().Return(count)
+	repoApp.EXPECT().CountMemories().Return(count, nil)
 
 	webApp := bootstrapWebApp(t, repoApp)
 	// create a new http request
