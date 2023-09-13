@@ -47,7 +47,7 @@ go-mocks:
 ## go-tests: run test on golang
 .PHONY: go-tests
 go-tests:
-	go test $(PACKAGES)
+	go test -cover $(PACKAGES)
 
 ## go-tests-coverage: run test on golang with cover output
 .PHONY: go-tests-coverage
