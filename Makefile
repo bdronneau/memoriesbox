@@ -72,12 +72,12 @@ deps-logs:
 ## db-migrate-up: launch migrate up
 .PHONY: db-migrate-up
 db-migrate-up:
-	migrate -database ${POSTGRESQL_URL} -path ./db/migrations up
+	migrate -database "${POSTGRESQL_URL}" -path ./db/migrations up
 
 ## db-migrate-down: revert last migrate
 .PHONY: db-migrate-down
 db-migrate-down:
-	migrate -database ${POSTGRESQL_URL} -path ./db/migrations down
+	migrate -database "${POSTGRESQL_URL}"" -path ./db/migrations down
 
 ## db-sqlboiler: update db models
 .PHONY: db-sqlboiler
