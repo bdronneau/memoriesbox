@@ -39,7 +39,10 @@ func main() {
 	}
 
 	loggerApp := logger.New(fs)
-	dbApp := db.New(dbConfig, loggerApp)
+	dbApp, err := db.New(dbConfig, loggerApp)
+	if err != nil {
+		log.Fatal(err)
+	}
 	repoApp := repositories.New(repoConfig, loggerApp, dbApp)
 	webApp := web.New(webConfig, content, loggerApp, repoApp)
 

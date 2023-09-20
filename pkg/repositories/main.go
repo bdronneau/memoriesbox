@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	"database/sql"
+	"context"
 	"flag"
 	"time"
 
@@ -17,13 +17,13 @@ import (
 // App of package
 type App interface {
 	AddMemory(quote string, author string, date time.Time) error
-	CountMemories() int64
+	CountMemories() (int64, error)
 	GetRandomMemories() (models.Memory, error)
 	PingDB() error
 }
 
 type app struct {
-	DB *sql.DB
+	dbApp db.App
 
 	logger *zap.SugaredLogger
 }
@@ -36,13 +36,13 @@ func GetConfig(fs *flag.FlagSet) Config {
 
 func New(config Config, loggerApp logger.App, dbApp db.App) App {
 	return &app{
-		DB:     dbApp.DB,
+		dbApp:  dbApp,
 		logger: loggerApp.Sugar,
 	}
 }
 
 func (a *app) PingDB() error {
-	err := a.DB.Ping()
+	err := a.dbApp.Ping(context.Background())
 	if err != nil {
 		a.logger.Errorf("Unable to ping to database: %v", err)
 		return err

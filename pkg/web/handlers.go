@@ -33,7 +33,13 @@ func (a *app) versionHandler(c echo.Context) error {
 }
 
 func (a *app) countMemories(c echo.Context) error {
-	return c.String(http.StatusOK, fmt.Sprintf("%d", a.repositories.CountMemories()))
+	count, err := a.repositories.CountMemories()
+	if err != nil {
+		a.logger.Errorf("Can not count memories %v", err)
+		return c.JSON(http.StatusInternalServerError, "Oups check application log")
+	}
+
+	return c.String(http.StatusOK, fmt.Sprintf("%d", count))
 }
 
 func (a *app) getMemories(c echo.Context) error {

@@ -50,11 +50,12 @@ func (mr *RepositoriesMockRecorder) AddMemory(quote, author, date interface{}) *
 }
 
 // CountMemories mocks base method.
-func (m *Repositories) CountMemories() int64 {
+func (m *Repositories) CountMemories() (int64, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CountMemories")
 	ret0, _ := ret[0].(int64)
-	return ret0
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
 }
 
 // CountMemories indicates an expected call of CountMemories.

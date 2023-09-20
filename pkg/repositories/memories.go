@@ -10,21 +10,21 @@ import (
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
 
-func (a *app) CountMemories() int64 {
+func (a *app) CountMemories() (int64, error) {
 	a.logger.Debug("Count memories")
 
-	count, err := dbModels.Memories().Count(context.Background(), a.DB)
+	count, err := dbModels.Memories().Count(context.Background(), a.dbApp.DB)
 	if err != nil {
-		a.logger.Fatal(err)
+		return -1, err
 	}
 
-	return count
+	return count, nil
 }
 
 func (a *app) GetRandomMemories() (models.Memory, error) {
 	a.logger.Debug("Retrieve random memory")
 
-	memories, err := dbModels.Memories(qm.OrderBy("RANDOM()")).One(context.Background(), a.DB)
+	memories, err := dbModels.Memories(qm.OrderBy("RANDOM()")).One(context.Background(), a.dbApp.DB)
 	if err != nil {
 		return models.Memory{}, err
 	}
@@ -46,7 +46,7 @@ func (a *app) AddMemory(quote string, author string, date time.Time) error {
 		Append:  date,
 	}
 
-	err := memory.Insert(context.Background(), a.DB, boil.Infer())
+	err := memory.Insert(context.Background(), a.dbApp.DB, boil.Infer())
 	if err != nil {
 		return err
 	}

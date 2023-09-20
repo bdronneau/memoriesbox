@@ -47,7 +47,12 @@ go-mocks:
 ## go-tests: run test on golang
 .PHONY: go-tests
 go-tests:
-	go test $(PACKAGES)
+	go test -cover $(PACKAGES)
+
+## go-tests-coverage: run test on golang with cover output
+.PHONY: go-tests-coverage
+go-tests-coverage:
+	go test -coverprofile=cover.out $(PACKAGES) && go tool cover -html=cover.out
 
 ## go-tests-dbless: run test without DB
 .PHONY: v
@@ -67,12 +72,12 @@ deps-logs:
 ## db-migrate-up: launch migrate up
 .PHONY: db-migrate-up
 db-migrate-up:
-	migrate -database ${POSTGRESQL_URL} -path ./db/migrations up
+	migrate -database "${POSTGRESQL_URL}" -path ./db/migrations up
 
 ## db-migrate-down: revert last migrate
 .PHONY: db-migrate-down
 db-migrate-down:
-	migrate -database ${POSTGRESQL_URL} -path ./db/migrations down
+	migrate -database "${POSTGRESQL_URL}"" -path ./db/migrations down
 
 ## db-sqlboiler: update db models
 .PHONY: db-sqlboiler
