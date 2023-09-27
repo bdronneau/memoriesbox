@@ -1,5 +1,51 @@
 # Changelog
 
+## [1.5.0](https://github.com/bdronneau/memoriesbox/compare/v1.4.2...v1.5.0) (2023-09-25)
+
+
+### 🚀 Features
+
+* allow insert memory ([45caf24](https://github.com/bdronneau/memoriesbox/commit/45caf2482252284642e5e5a297ac088426c93187))
+* **Makefile:** add coverage option ([bc1a734](https://github.com/bdronneau/memoriesbox/commit/bc1a734a6aedd0d120869a4b0b0ab101dc1961a6))
+* **test:** add functionnal tests ([1475d0a](https://github.com/bdronneau/memoriesbox/commit/1475d0ac9a7667ce2425c74718c3e9c72d2243d3))
+
+
+### 🐞 Bug Fixes
+
+* **Dockerfile:** wrong executable ([89376cd](https://github.com/bdronneau/memoriesbox/commit/89376cd905489d5918556378d4510fe4ec4c6ef6))
+* **Makefile:** protect DSN ([555bc02](https://github.com/bdronneau/memoriesbox/commit/555bc0275369f6f6ece81c70586629d4a6aa6ef1))
+* **sonar:** handle alert ([a0ba206](https://github.com/bdronneau/memoriesbox/commit/a0ba206a69b80b731f9f55c166b52fec714abae0))
+
+
+### ✨ Polish
+
+* add way to disable ADD interface ([f717243](https://github.com/bdronneau/memoriesbox/commit/f717243a972d24710d48ed87c978ad40e8491cf6))
+* **DB:** optimize declaration ([539b5e8](https://github.com/bdronneau/memoriesbox/commit/539b5e8de038249f69b62821f229fde4744dd345))
+* **github:** optimize golangci-lint step ([c1d6adb](https://github.com/bdronneau/memoriesbox/commit/c1d6adba8ad085e03ca838a36bc0aee112bd7abb))
+* **interface:** migrate to bulma ([ca7631c](https://github.com/bdronneau/memoriesbox/commit/ca7631c50f5dd5b1fe568168850d5ba790e39222))
+* **memories:** add error handling ([d660b82](https://github.com/bdronneau/memoriesbox/commit/d660b823b26298463ad54c041bccd78990561d97))
+* **mocks:** update generate way ([c1c5dc9](https://github.com/bdronneau/memoriesbox/commit/c1c5dc9bc8ee0e3d298a5be68df78cc41f408c39))
+* **pgx:** bump version ([8cdae60](https://github.com/bdronneau/memoriesbox/commit/8cdae6074b9efbfe893a4ebf01fd6b0c04d23e53))
+* **sonar:** rename ([1c54e1b](https://github.com/bdronneau/memoriesbox/commit/1c54e1bb067df1bda4ff751936577114e53e1d1c))
+* **sonar:** skip test quality ([c71c411](https://github.com/bdronneau/memoriesbox/commit/c71c41152d8fb861faba4c0351b51434c3975d8d))
+* **sqlboiler:** allow override user ([6f78788](https://github.com/bdronneau/memoriesbox/commit/6f78788e0e7ca7e36cbb8d6779d3fd126c864896))
+* **template:** remove duplicate ([8f7394a](https://github.com/bdronneau/memoriesbox/commit/8f7394ab52cddbc8fea6cdc0468f86b561ac2240))
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v5 from 5.3.1 to 5.4.3 ([d9bd2d9](https://github.com/bdronneau/memoriesbox/commit/d9bd2d97ea0c2b26d2ca327ecb51e430fd7158fb))
+* bump github.com/stretchr/testify from 1.8.3 to 1.8.4 ([a10ffc3](https://github.com/bdronneau/memoriesbox/commit/a10ffc3a54c07da870b51b40618ff96a0e1c0488))
+* bump github.com/volatiletech/sqlboiler/v4 from 4.14.2 to 4.15.0 ([bac0e98](https://github.com/bdronneau/memoriesbox/commit/bac0e98c62fb71323c285e0cf365ad88b056e21a))
+* bump go.uber.org/mock from 0.2.0 to 0.3.0 ([0678b88](https://github.com/bdronneau/memoriesbox/commit/0678b8857fcd280b782e89171e740670061e7b8b))
+* bump go.uber.org/zap from 1.24.0 to 1.25.0 ([2e0bd2f](https://github.com/bdronneau/memoriesbox/commit/2e0bd2fe74eb6dc09c885c7bfb19d1de6f4e2c14))
+* bump go.uber.org/zap from 1.25.0 to 1.26.0 ([d9ba7be](https://github.com/bdronneau/memoriesbox/commit/d9ba7bea739c8fdbd3793f27738be469f51ab16f))
+* **docs:** rewamp documentation ([afe13b6](https://github.com/bdronneau/memoriesbox/commit/afe13b6f9c37629cd50d87fcf33812acbbfe9404))
+* **go:** migrate to uber mock ([737c59c](https://github.com/bdronneau/memoriesbox/commit/737c59c2a6c26bf577c7afb4c98453ce600c5beb))
+* please the linter ([342af73](https://github.com/bdronneau/memoriesbox/commit/342af732d2e4bca1f65c10f4d0e38c7f4499223c))
+* remove duplicate ([3159b24](https://github.com/bdronneau/memoriesbox/commit/3159b242d8825e2ca362ffb07d30d9b8a8135170))
+* update go.mod ([04bc159](https://github.com/bdronneau/memoriesbox/commit/04bc159307f3386fdf1581a605697e8a95de95ee))
+
 ## [1.4.2](https://github.com/bdronneau/memoriesbox/compare/v1.4.1...v1.4.2) (2023-07-24)
 
 
