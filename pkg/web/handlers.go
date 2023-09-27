@@ -61,8 +61,9 @@ func (a *app) addMemory(c echo.Context) error {
 	err := c.Render(http.StatusOK, "memory_add.html", map[string]interface{}{
 		"messages": messages,
 	})
-
-	a.logger.Errorf("Can not render %v", err)
+	if err != nil {
+		a.logger.Errorf("Can not render %v", err)
+	}
 
 	return err
 }
