@@ -14,7 +14,6 @@ import (
 	"time"
 
 	"github.com/friendsofgo/errors"
-	"github.com/volatiletech/null/v8"
 	"github.com/volatiletech/sqlboiler/v4/boil"
 	"github.com/volatiletech/sqlboiler/v4/queries"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
@@ -24,24 +23,21 @@ import (
 
 // Memory is an object representing the database table.
 type Memory struct {
-	ID      int         `boil:"id" json:"id" toml:"id" yaml:"id"`
-	Author  string      `boil:"author" json:"author" toml:"author" yaml:"author"`
-	Content string      `boil:"content" json:"content" toml:"content" yaml:"content"`
-	Append  time.Time   `boil:"append" json:"append" toml:"append" yaml:"append"`
-	Xid     null.String `boil:"xid" json:"xid,omitempty" toml:"xid" yaml:"xid,omitempty"`
+	Author  string    `boil:"author" json:"author" toml:"author" yaml:"author"`
+	Content string    `boil:"content" json:"content" toml:"content" yaml:"content"`
+	Append  time.Time `boil:"append" json:"append" toml:"append" yaml:"append"`
+	Xid     string    `boil:"xid" json:"xid" toml:"xid" yaml:"xid"`
 
 	R *memoryR `boil:"-" json:"-" toml:"-" yaml:"-"`
 	L memoryL  `boil:"-" json:"-" toml:"-" yaml:"-"`
 }
 
 var MemoryColumns = struct {
-	ID      string
 	Author  string
 	Content string
 	Append  string
 	Xid     string
 }{
-	ID:      "id",
 	Author:  "author",
 	Content: "content",
 	Append:  "append",
@@ -49,13 +45,11 @@ var MemoryColumns = struct {
 }
 
 var MemoryTableColumns = struct {
-	ID      string
 	Author  string
 	Content string
 	Append  string
 	Xid     string
 }{
-	ID:      "memories.id",
 	Author:  "memories.author",
 	Content: "memories.content",
 	Append:  "memories.append",
@@ -63,29 +57,6 @@ var MemoryTableColumns = struct {
 }
 
 // Generated where
-
-type whereHelperint struct{ field string }
-
-func (w whereHelperint) EQ(x int) qm.QueryMod  { return qmhelper.Where(w.field, qmhelper.EQ, x) }
-func (w whereHelperint) NEQ(x int) qm.QueryMod { return qmhelper.Where(w.field, qmhelper.NEQ, x) }
-func (w whereHelperint) LT(x int) qm.QueryMod  { return qmhelper.Where(w.field, qmhelper.LT, x) }
-func (w whereHelperint) LTE(x int) qm.QueryMod { return qmhelper.Where(w.field, qmhelper.LTE, x) }
-func (w whereHelperint) GT(x int) qm.QueryMod  { return qmhelper.Where(w.field, qmhelper.GT, x) }
-func (w whereHelperint) GTE(x int) qm.QueryMod { return qmhelper.Where(w.field, qmhelper.GTE, x) }
-func (w whereHelperint) IN(slice []int) qm.QueryMod {
-	values := make([]interface{}, 0, len(slice))
-	for _, value := range slice {
-		values = append(values, value)
-	}
-	return qm.WhereIn(fmt.Sprintf("%s IN ?", w.field), values...)
-}
-func (w whereHelperint) NIN(slice []int) qm.QueryMod {
-	values := make([]interface{}, 0, len(slice))
-	for _, value := range slice {
-		values = append(values, value)
-	}
-	return qm.WhereNotIn(fmt.Sprintf("%s NOT IN ?", w.field), values...)
-}
 
 type whereHelperstring struct{ field string }
 
@@ -135,68 +106,16 @@ func (w whereHelpertime_Time) GTE(x time.Time) qm.QueryMod {
 	return qmhelper.Where(w.field, qmhelper.GTE, x)
 }
 
-type whereHelpernull_String struct{ field string }
-
-func (w whereHelpernull_String) EQ(x null.String) qm.QueryMod {
-	return qmhelper.WhereNullEQ(w.field, false, x)
-}
-func (w whereHelpernull_String) NEQ(x null.String) qm.QueryMod {
-	return qmhelper.WhereNullEQ(w.field, true, x)
-}
-func (w whereHelpernull_String) LT(x null.String) qm.QueryMod {
-	return qmhelper.Where(w.field, qmhelper.LT, x)
-}
-func (w whereHelpernull_String) LTE(x null.String) qm.QueryMod {
-	return qmhelper.Where(w.field, qmhelper.LTE, x)
-}
-func (w whereHelpernull_String) GT(x null.String) qm.QueryMod {
-	return qmhelper.Where(w.field, qmhelper.GT, x)
-}
-func (w whereHelpernull_String) GTE(x null.String) qm.QueryMod {
-	return qmhelper.Where(w.field, qmhelper.GTE, x)
-}
-func (w whereHelpernull_String) LIKE(x null.String) qm.QueryMod {
-	return qm.Where(w.field+" LIKE ?", x)
-}
-func (w whereHelpernull_String) NLIKE(x null.String) qm.QueryMod {
-	return qm.Where(w.field+" NOT LIKE ?", x)
-}
-func (w whereHelpernull_String) ILIKE(x null.String) qm.QueryMod {
-	return qm.Where(w.field+" ILIKE ?", x)
-}
-func (w whereHelpernull_String) NILIKE(x null.String) qm.QueryMod {
-	return qm.Where(w.field+" NOT ILIKE ?", x)
-}
-func (w whereHelpernull_String) IN(slice []string) qm.QueryMod {
-	values := make([]interface{}, 0, len(slice))
-	for _, value := range slice {
-		values = append(values, value)
-	}
-	return qm.WhereIn(fmt.Sprintf("%s IN ?", w.field), values...)
-}
-func (w whereHelpernull_String) NIN(slice []string) qm.QueryMod {
-	values := make([]interface{}, 0, len(slice))
-	for _, value := range slice {
-		values = append(values, value)
-	}
-	return qm.WhereNotIn(fmt.Sprintf("%s NOT IN ?", w.field), values...)
-}
-
-func (w whereHelpernull_String) IsNull() qm.QueryMod    { return qmhelper.WhereIsNull(w.field) }
-func (w whereHelpernull_String) IsNotNull() qm.QueryMod { return qmhelper.WhereIsNotNull(w.field) }
-
 var MemoryWhere = struct {
-	ID      whereHelperint
 	Author  whereHelperstring
 	Content whereHelperstring
 	Append  whereHelpertime_Time
-	Xid     whereHelpernull_String
+	Xid     whereHelperstring
 }{
-	ID:      whereHelperint{field: "\"mbox\".\"memories\".\"id\""},
 	Author:  whereHelperstring{field: "\"mbox\".\"memories\".\"author\""},
 	Content: whereHelperstring{field: "\"mbox\".\"memories\".\"content\""},
 	Append:  whereHelpertime_Time{field: "\"mbox\".\"memories\".\"append\""},
-	Xid:     whereHelpernull_String{field: "\"mbox\".\"memories\".\"xid\""},
+	Xid:     whereHelperstring{field: "\"mbox\".\"memories\".\"xid\""},
 }
 
 // MemoryRels is where relationship names are stored.
@@ -216,10 +135,10 @@ func (*memoryR) NewStruct() *memoryR {
 type memoryL struct{}
 
 var (
-	memoryAllColumns            = []string{"id", "author", "content", "append", "xid"}
-	memoryColumnsWithoutDefault = []string{"author", "content", "append"}
-	memoryColumnsWithDefault    = []string{"id", "xid"}
-	memoryPrimaryKeyColumns     = []string{"id"}
+	memoryAllColumns            = []string{"author", "content", "append", "xid"}
+	memoryColumnsWithoutDefault = []string{"author", "content", "append", "xid"}
+	memoryColumnsWithDefault    = []string{}
+	memoryPrimaryKeyColumns     = []string{"xid"}
 	memoryGeneratedColumns      = []string{}
 )
 
@@ -514,7 +433,7 @@ func Memories(mods ...qm.QueryMod) memoryQuery {
 
 // FindMemory retrieves a single record by ID with an executor.
 // If selectCols is empty Find will return all columns.
-func FindMemory(ctx context.Context, exec boil.ContextExecutor, iD int, selectCols ...string) (*Memory, error) {
+func FindMemory(ctx context.Context, exec boil.ContextExecutor, xid string, selectCols ...string) (*Memory, error) {
 	memoryObj := &Memory{}
 
 	sel := "*"
@@ -522,10 +441,10 @@ func FindMemory(ctx context.Context, exec boil.ContextExecutor, iD int, selectCo
 		sel = strings.Join(strmangle.IdentQuoteSlice(dialect.LQ, dialect.RQ, selectCols), ",")
 	}
 	query := fmt.Sprintf(
-		"select %s from \"mbox\".\"memories\" where \"id\"=$1", sel,
+		"select %s from \"mbox\".\"memories\" where \"xid\"=$1", sel,
 	)
 
-	q := queries.Raw(query, iD)
+	q := queries.Raw(query, xid)
 
 	err := q.Bind(ctx, exec, memoryObj)
 	if err != nil {
@@ -877,7 +796,7 @@ func (o *Memory) Delete(ctx context.Context, exec boil.ContextExecutor) (int64, 
 	}
 
 	args := queries.ValuesFromMapping(reflect.Indirect(reflect.ValueOf(o)), memoryPrimaryKeyMapping)
-	sql := "DELETE FROM \"mbox\".\"memories\" WHERE \"id\"=$1"
+	sql := "DELETE FROM \"mbox\".\"memories\" WHERE \"xid\"=$1"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
@@ -974,7 +893,7 @@ func (o MemorySlice) DeleteAll(ctx context.Context, exec boil.ContextExecutor) (
 // Reload refetches the object from the database
 // using the primary keys with an executor.
 func (o *Memory) Reload(ctx context.Context, exec boil.ContextExecutor) error {
-	ret, err := FindMemory(ctx, exec, o.ID)
+	ret, err := FindMemory(ctx, exec, o.Xid)
 	if err != nil {
 		return err
 	}
@@ -1013,16 +932,16 @@ func (o *MemorySlice) ReloadAll(ctx context.Context, exec boil.ContextExecutor) 
 }
 
 // MemoryExists checks if the Memory row exists.
-func MemoryExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool, error) {
+func MemoryExists(ctx context.Context, exec boil.ContextExecutor, xid string) (bool, error) {
 	var exists bool
-	sql := "select exists(select 1 from \"mbox\".\"memories\" where \"id\"=$1 limit 1)"
+	sql := "select exists(select 1 from \"mbox\".\"memories\" where \"xid\"=$1 limit 1)"
 
 	if boil.IsDebug(ctx) {
 		writer := boil.DebugWriterFrom(ctx)
 		fmt.Fprintln(writer, sql)
-		fmt.Fprintln(writer, iD)
+		fmt.Fprintln(writer, xid)
 	}
-	row := exec.QueryRowContext(ctx, sql, iD)
+	row := exec.QueryRowContext(ctx, sql, xid)
 
 	err := row.Scan(&exists)
 	if err != nil {
@@ -1034,5 +953,5 @@ func MemoryExists(ctx context.Context, exec boil.ContextExecutor, iD int) (bool,
 
 // Exists checks if the Memory row exists.
 func (o *Memory) Exists(ctx context.Context, exec boil.ContextExecutor) (bool, error) {
-	return MemoryExists(ctx, exec, o.ID)
+	return MemoryExists(ctx, exec, o.Xid)
 }

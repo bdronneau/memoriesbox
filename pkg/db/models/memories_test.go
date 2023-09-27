@@ -149,7 +149,7 @@ func testMemoriesExists(t *testing.T) {
 		t.Error(err)
 	}
 
-	e, err := MemoryExists(ctx, tx, o.ID)
+	e, err := MemoryExists(ctx, tx, o.Xid)
 	if err != nil {
 		t.Errorf("Unable to check if Memory exists: %s", err)
 	}
@@ -175,7 +175,7 @@ func testMemoriesFind(t *testing.T) {
 		t.Error(err)
 	}
 
-	memoryFound, err := FindMemory(ctx, tx, o.ID)
+	memoryFound, err := FindMemory(ctx, tx, o.Xid)
 	if err != nil {
 		t.Error(err)
 	}
@@ -568,7 +568,7 @@ func testMemoriesSelect(t *testing.T) {
 }
 
 var (
-	memoryDBTypes = map[string]string{`ID`: `integer`, `Author`: `text`, `Content`: `text`, `Append`: `timestamp with time zone`, `Xid`: `text`}
+	memoryDBTypes = map[string]string{`Author`: `text`, `Content`: `text`, `Append`: `timestamp with time zone`, `Xid`: `text`}
 	_             = bytes.MinRead
 )
 
