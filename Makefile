@@ -31,6 +31,11 @@ lint: go-lint
 go-dev:
 	go run cmd/webapp/main.go
 
+## go-migrate: run migrate to xid
+.PHONY: go-migrate
+go-migrate:
+	go run cmd/migrate/main.go
+
 ## go-migrate-up: run cli debug
 .PHONY: go-migrate-up
 go-migrate-up:
