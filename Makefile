@@ -10,6 +10,14 @@ PACKAGES ?= ./...
 help: Makefile
 	@sed -n 's|^##||p' $< | column -t -s ':' | sort
 
+## init: add tools
+.PHONY: init
+init:
+	go install github.com/volatiletech/sqlboiler/v4@latest
+	go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@latest
+
+	go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
 ## build: build all components for prod
 .PHONY: build
 build: go-build
@@ -22,6 +30,11 @@ lint: go-lint
 .PHONY: go-dev
 go-dev:
 	go run cmd/webapp/main.go
+
+## go-migrate: run migrate to xid
+.PHONY: go-migrate
+go-migrate:
+	go run cmd/migrate/main.go
 
 ## go-migrate-up: run cli debug
 .PHONY: go-migrate-up

@@ -6,6 +6,7 @@ import (
 
 	dbModels "github.com/bdronneau/memoriesbox/pkg/db/models"
 	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
+	"github.com/rs/xid"
 	"github.com/volatiletech/sqlboiler/v4/boil"
 	"github.com/volatiletech/sqlboiler/v4/queries/qm"
 )
@@ -30,7 +31,7 @@ func (a *app) GetRandomMemories() (models.Memory, error) {
 	}
 
 	return models.Memory{
-		ID:      memories.ID,
+		XID:     memories.Xid,
 		Author:  memories.Author,
 		Content: memories.Content,
 		Append:  memories.Append.Format(time.DateOnly),
@@ -39,8 +40,10 @@ func (a *app) GetRandomMemories() (models.Memory, error) {
 
 func (a *app) AddMemory(quote string, author string, date time.Time) error {
 	a.logger.Debug("Add memory")
+	guid := xid.New()
 
 	memory := dbModels.Memory{
+		Xid:     guid.String(),
 		Author:  author,
 		Content: quote,
 		Append:  date,
