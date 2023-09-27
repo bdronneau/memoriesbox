@@ -25,7 +25,7 @@ func TestGetRandomMemories(t *testing.T) {
 	defer db.Close()
 
 	// Set expectations for the mock database
-	rows := sqlmock.NewRows([]string{"id", "author", "content", "append"}).AddRow(1, "John", "Doe is not my lastname", time.Date(2022, 12, 12, 0, 0, 0, 0, time.UTC))
+	rows := sqlmock.NewRows([]string{"author", "content", "append", "xid"}).AddRow("John", "Doe is not my lastname", time.Date(2022, 12, 12, 0, 0, 0, 0, time.UTC), "foobar")
 	mock.ExpectQuery(`SELECT "mbox"\."memories".* FROM "mbox"\."memories" ORDER BY RANDOM\(\) LIMIT 1;`).WillReturnRows(rows)
 
 	loggerApp := logger.App{Sugar: zaptest.NewLogger(t).Sugar()}
@@ -38,7 +38,7 @@ func TestGetRandomMemories(t *testing.T) {
 	}
 
 	expected := models.Memory{
-		ID:      1,
+		XID:     "foobar",
 		Author:  "John",
 		Content: "Doe is not my lastname",
 		Append:  "2022-12-12",
@@ -109,13 +109,14 @@ func (s *Suite) TestCreateAndRetrieve() {
 		assert.Equal(s.T(), int64(1), count, "Expected to have a new memory in DB")
 
 		expected := models.Memory{
-			ID:      1,
+			XID:     "foo",
 			Author:  "John",
 			Content: "Doe is not my lastname",
 			Append:  "2022-12-12",
 		}
 
 		actual, err := s.repoApp.GetRandomMemories()
+		actual.XID = "foo"
 		assert.NoError(s.T(), err)
 
 		assert.Equal(s.T(), expected, actual, "Memory has not been insert has expected")
