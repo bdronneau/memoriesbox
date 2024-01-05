@@ -25,3 +25,9 @@ updates:
       deps:
         patterns:
           - "*"
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: weekly
+      time: "07:00"
+      day: monday
