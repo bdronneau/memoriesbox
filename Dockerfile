@@ -5,7 +5,7 @@ COPY . .
 
 RUN CGO_ENABLED=0 go build -ldflags="-s -w" -installsuffix nocgo -o bin/memoriesbox cmd/webapp/main.go
 
-FROM migrate/migrate:v4.15.2 AS migrate
+FROM migrate/migrate:v4.17.0 AS migrate
 
 FROM alpine AS fetcher
 ENV DOCKERIZE_VERSION v0.6.1
