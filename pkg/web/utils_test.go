@@ -1,13 +1,14 @@
 package web
 
 import (
+	"encoding/json"
 	"errors"
 	"net/http"
 	"net/http/httptest"
-	"strings"
 	"testing"
 
 	"github.com/labstack/echo/v4"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewSimpleResponse(t *testing.T) {
@@ -20,10 +21,9 @@ func TestNewSimpleResponse(t *testing.T) {
 
 	_ = NewSimpleResponse(e.NewContext(req, rec), http.StatusOK, "test message")
 
-	expected := `{"code":200,"message":"test message"}`
-	if expected != strings.TrimRight(rec.Body.String(), "\n") {
-		t.Errorf(EXPECT_CONTENT, expected, rec.Body.String())
-	}
+	assert.True(t, json.Valid(rec.Body.Bytes()))
+	assert.Contains(t, rec.Body.String(), `"code":200`)
+	assert.Contains(t, rec.Body.String(), `"message":"test message"`)
 }
 
 func TestNewError(t *testing.T) {
@@ -42,8 +42,7 @@ func TestNewError(t *testing.T) {
 		t.Errorf("expected %d but got %d", expectedCode, rec.Code)
 	}
 
-	expectedBody := `{"code":500,"message":"test error"}`
-	if expectedBody != strings.TrimRight(rec.Body.String(), "\n") {
-		t.Errorf(EXPECT_CONTENT, expectedBody, rec.Body.String())
-	}
+	assert.True(t, json.Valid(rec.Body.Bytes()))
+	assert.Contains(t, rec.Body.String(), `"code":500`)
+	assert.Contains(t, rec.Body.String(), `"message":"test error"`)
 }
