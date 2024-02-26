@@ -24,13 +24,12 @@ type App interface {
 }
 
 type app struct {
+	repositories  repositories.App
 	done          chan struct{}
 	echo          *echo.Echo
 	listenAddress string
 
 	ExtraLog bool
-
-	repositories repositories.App
 }
 
 type Config struct {

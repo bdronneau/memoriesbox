@@ -4,14 +4,14 @@ import "github.com/labstack/echo/v4"
 
 // HTTPSuccess struct for simple response
 type HTTPSuccess struct {
-	Code    int    `json:"code" example:"200"`
 	Message string `json:"message" example:"I'm a description"`
+	Code    int    `json:"code" example:"200"`
 }
 
 // HTTPError struct for formating all erors
 type HTTPError struct {
-	Code    int    `json:"code" example:"400"`
 	Message string `json:"message" example:"status bad request"`
+	Code    int    `json:"code" example:"400"`
 }
 
 // NewError generator
