@@ -2,25 +2,55 @@ package logger
 
 import (
 	"flag"
-	"log"
-
-	"go.uber.org/zap"
+	"log/slog"
+	"os"
 )
 
 type App struct {
-	Sugar *zap.SugaredLogger
+	Logger *slog.Logger
+
+	ExtraLog bool
 }
 
-func New(fs *flag.FlagSet) App {
-	logger, err := zap.NewDevelopment()
-	if err != nil {
-		log.Fatalf("can't initialize zap logger: %v", err)
+type Config struct {
+	logDev        *bool
+	logExtraDebug *bool
+	LogLevel      *string
+}
+
+func GetConfig(fs *flag.FlagSet) Config {
+	return Config{
+		logDev:        fs.Bool("log-dev", false, "display in dev mode"),
+		logExtraDebug: fs.Bool("log-extra-debug", false, "Always more"),
+		LogLevel:      fs.String("log-level", "info", "Change log level"),
+	}
+}
+
+func New(config Config) App {
+	var level slog.Level
+
+	if err := level.UnmarshalText([]byte(*config.LogLevel)); err != nil {
+		slog.Error(err.Error(), "level", *config.LogLevel)
+
+		return App{
+			ExtraLog: *config.logExtraDebug,
+		}
 	}
 
-	// flushes buffer, if any
-	defer func() { _ = logger.Sync() }()
+	options := &slog.HandlerOptions{
+		Level: level,
+	}
+
+	var handler slog.Handler
+	if *config.logDev {
+		handler = slog.NewTextHandler(os.Stdout, options)
+	} else {
+		handler = slog.NewJSONHandler(os.Stdout, options)
+	}
+
+	slog.SetDefault(slog.New(handler))
 
 	return App{
-		Sugar: logger.Sugar(),
+		ExtraLog: *config.logExtraDebug,
 	}
 }

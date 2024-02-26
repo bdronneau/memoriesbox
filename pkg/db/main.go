@@ -11,8 +11,6 @@ import (
 
 	"github.com/bdronneau/memoriesbox/pkg/logger"
 
-	"go.uber.org/zap"
-
 	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
@@ -24,7 +22,7 @@ var (
 type App struct {
 	DB *sql.DB
 
-	logger *zap.SugaredLogger
+	ExtraLog bool
 }
 
 type Config struct {
@@ -66,7 +64,7 @@ func New(config Config, loggerApp logger.App) (App, error) {
 	instance := App{
 		DB: db,
 
-		logger: loggerApp.Sugar,
+		ExtraLog: loggerApp.ExtraLog,
 	}
 
 	ctx, cancel := context.WithTimeout(context.Background(), SQLTimeout)

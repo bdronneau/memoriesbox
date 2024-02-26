@@ -13,8 +13,6 @@ import (
 	"github.com/bdronneau/memoriesbox/pkg/repositories"
 	"github.com/bdronneau/memoriesbox/pkg/repositories/models"
 	"go.uber.org/mock/gomock"
-
-	"go.uber.org/zap/zaptest"
 )
 
 const EXPECT_STATUS_CODE = "expected status code %d but got %d"
@@ -34,7 +32,7 @@ func bootstrapWebApp(t *testing.T, repoApp repositories.App) App {
 		featAddMemory: &featAddMemory,
 	}
 
-	return New(webConfig, os.DirFS("../../cmd/webapp"), logger.App{Sugar: zaptest.NewLogger(t).Sugar()}, repoApp)
+	return New(webConfig, os.DirFS("../../cmd/webapp"), logger.App{ExtraLog: false}, repoApp)
 }
 
 func TestGetRandomMemories(t *testing.T) {

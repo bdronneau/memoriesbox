@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"context"
+	"log/slog"
 	"time"
 
 	dbModels "github.com/bdronneau/memoriesbox/pkg/db/models"
@@ -12,7 +13,7 @@ import (
 )
 
 func (a *app) CountMemories() (int64, error) {
-	a.logger.Debug("Count memories")
+	slog.Debug("Count memories")
 
 	count, err := dbModels.Memories().Count(context.Background(), a.dbApp.DB)
 	if err != nil {
@@ -23,7 +24,7 @@ func (a *app) CountMemories() (int64, error) {
 }
 
 func (a *app) GetRandomMemories() (models.Memory, error) {
-	a.logger.Debug("Retrieve random memory")
+	slog.Debug("Retrieve random memory")
 
 	memories, err := dbModels.Memories(qm.OrderBy("RANDOM()")).One(context.Background(), a.dbApp.DB)
 	if err != nil {
@@ -39,7 +40,7 @@ func (a *app) GetRandomMemories() (models.Memory, error) {
 }
 
 func (a *app) AddMemory(quote string, author string, date time.Time) error {
-	a.logger.Debug("Add memory")
+	slog.Debug("Add memory")
 	guid := xid.New()
 
 	memory := dbModels.Memory{

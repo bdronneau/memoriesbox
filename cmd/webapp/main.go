@@ -5,6 +5,7 @@ import (
 	"embed"
 	"flag"
 	"log"
+	"log/slog"
 	"os"
 	"os/signal"
 	"syscall"
@@ -30,6 +31,7 @@ func main() {
 	dbConfig := db.GetConfig(fs)
 	webConfig := web.GetConfig(fs)
 	repoConfig := repositories.GetConfig(fs)
+	loggerConfig := logger.GetConfig(fs)
 
 	err := ff.Parse(fs, os.Args[1:],
 		ff.WithEnvVarPrefix("MEMORIESBOX"),
@@ -38,7 +40,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	loggerApp := logger.New(fs)
+	loggerApp := logger.New(loggerConfig)
 	dbApp, err := db.New(dbConfig, loggerApp)
 	if err != nil {
 		log.Fatal(err)
@@ -59,6 +61,6 @@ func main() {
 	defer cancel()
 
 	if err := webApp.Shutdown(ctx); err != nil {
-		loggerApp.Sugar.Error(err)
+		slog.Error("On webserver shutdown", "error", err)
 	}
 }

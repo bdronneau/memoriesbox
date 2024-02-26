@@ -6,13 +6,14 @@ import (
 	"fmt"
 	"html/template"
 	"io/fs"
+	"log/slog"
 	"net/http"
+	"os"
 
 	"github.com/bdronneau/memoriesbox/pkg/logger"
 	"github.com/bdronneau/memoriesbox/pkg/repositories"
 
 	"github.com/labstack/echo/v4"
-	"go.uber.org/zap"
 )
 
 // App of package
@@ -26,8 +27,10 @@ type app struct {
 	done          chan struct{}
 	echo          *echo.Echo
 	listenAddress string
-	logger        *zap.SugaredLogger
-	repositories  repositories.App
+
+	ExtraLog bool
+
+	repositories repositories.App
 }
 
 type Config struct {
@@ -51,16 +54,17 @@ func New(config Config, fs fs.FS, loggerApp logger.App, repoApp repositories.App
 	done := make(chan struct{})
 
 	if port == 0 {
-		loggerApp.Sugar.Fatal("Can not run on port 0")
+		slog.Error("Can not run on port 0")
+		os.Exit(1)
 	}
 
-	loggerApp.Sugar.Infof("api listen on %s:%d", *config.address, *config.port)
+	slog.Info("api listen on", "address", fmt.Sprintf("%s:%d", *config.address, *config.port))
 
 	app := &app{
 		repositories:  repoApp,
 		done:          done,
 		listenAddress: fmt.Sprintf("%s:%d", *config.address, port),
-		logger:        loggerApp.Sugar,
+		ExtraLog:      loggerApp.ExtraLog,
 	}
 
 	app.echo = app.ConfigureEcho(*config.debug, fs, *config.featAddMemory)
@@ -91,7 +95,8 @@ func (a *app) ConfigureEcho(debug bool, embedFs fs.FS, featAddMemory bool) *echo
 
 	tpl, err := template.ParseFS(embedFs, "templates/partials/*.html", "templates/*.html")
 	if err != nil {
-		a.logger.Fatal("Can not read templates/*.html")
+		slog.Error("Can not read templates/*.html")
+		os.Exit(1)
 	}
 
 	renderer := &TemplateRenderer{
@@ -101,7 +106,8 @@ func (a *app) ConfigureEcho(debug bool, embedFs fs.FS, featAddMemory bool) *echo
 
 	fsys, err := fs.Sub(embedFs, "static")
 	if err != nil {
-		a.logger.Fatal("Can not read ")
+		slog.Error("Can not read ")
+		os.Exit(1)
 	}
 
 	e.GET("/probes/ready", a.readyHandler)

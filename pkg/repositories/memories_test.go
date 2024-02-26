@@ -14,7 +14,6 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	"github.com/DATA-DOG/go-sqlmock"
-	"go.uber.org/zap/zaptest"
 )
 
 func TestGetRandomMemories(t *testing.T) {
@@ -28,7 +27,7 @@ func TestGetRandomMemories(t *testing.T) {
 	rows := sqlmock.NewRows([]string{"author", "content", "append", "xid"}).AddRow("John", "Doe is not my lastname", time.Date(2022, 12, 12, 0, 0, 0, 0, time.UTC), "foobar")
 	mock.ExpectQuery(`SELECT "mbox"\."memories".* FROM "mbox"\."memories" ORDER BY RANDOM\(\) LIMIT 1;`).WillReturnRows(rows)
 
-	loggerApp := logger.App{Sugar: zaptest.NewLogger(t).Sugar()}
+	loggerApp := logger.App{ExtraLog: false}
 	dbApp := dbMemories.App{DB: db}
 	repoApp := New(Config{}, loggerApp, dbApp)
 
@@ -66,7 +65,7 @@ func (r *Suite) SetupSuite() {
 	r.integration.Bootstrap("memoriesbox_test")
 
 	dbApp := dbMemories.App{DB: r.integration.DB()}
-	loggerApp := logger.App{Sugar: zaptest.NewLogger(r.T()).Sugar()}
+	loggerApp := logger.App{ExtraLog: false}
 	r.repoApp = New(Config{}, loggerApp, dbApp)
 }
 

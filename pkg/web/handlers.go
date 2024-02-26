@@ -3,6 +3,7 @@ package web
 import (
 	"errors"
 	"fmt"
+	"log/slog"
 	"net/http"
 	"os"
 	"time"
@@ -35,7 +36,7 @@ func (a *app) versionHandler(c echo.Context) error {
 func (a *app) countMemories(c echo.Context) error {
 	count, err := a.repositories.CountMemories()
 	if err != nil {
-		a.logger.Errorf("Can not count memories %v", err)
+		slog.Error("Can not count memories", "error", err)
 		return c.JSON(http.StatusInternalServerError, "Oups check application log")
 	}
 
@@ -45,7 +46,7 @@ func (a *app) countMemories(c echo.Context) error {
 func (a *app) getMemories(c echo.Context) error {
 	memory, err := a.repositories.GetRandomMemories()
 	if err != nil {
-		a.logger.Errorf("Can not retrieve a random memory %v", err)
+		slog.Error("Can not retrieve a random memory", "error", err)
 		return c.JSON(http.StatusInternalServerError, "Oups check application log")
 	}
 
@@ -62,7 +63,7 @@ func (a *app) addMemory(c echo.Context) error {
 		"messages": messages,
 	})
 	if err != nil {
-		a.logger.Errorf("Can not render %v", err)
+		slog.Error("Can not render", "error", err)
 	}
 
 	return err
@@ -102,7 +103,7 @@ func (a *app) addAPIMemory(c echo.Context) error {
 		return c.String(http.StatusInternalServerError, fmt.Sprintf("%v", err.Error()))
 	}
 
-	a.logger.Debugf("Quote create %s/%s/%s", author, date, quote)
+	slog.Debug("Quote create", "author", author, "date", date, "quote", quote)
 
 	return c.Redirect(301, "/")
 }
