@@ -1,5 +1,66 @@
 # Changelog
 
+## [2.0.0](https://github.com/bdronneau/memoriesbox/compare/v1.5.0...v2.0.0) (2024-06-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate primary key to xid
+
+### 🚀 Features
+
+* add xid column ([8b7e628](https://github.com/bdronneau/memoriesbox/commit/8b7e6283755e645bde5653c6968cc5ca89f35e0c))
+* **cmd:** add migrate script to xid ([d85b31e](https://github.com/bdronneau/memoriesbox/commit/d85b31edfe3fbdd53c623d929c6c46116210995a))
+* **dependabot:** add docker update ([7092dc2](https://github.com/bdronneau/memoriesbox/commit/7092dc2efe93c6283432ddc74f48a1885a920e46))
+* **dependabot:** add group ([2b19952](https://github.com/bdronneau/memoriesbox/commit/2b19952dee1e9be438d6431ba1bca7e0c514b3d4))
+* **golang:** bump to 1.21 ([2699033](https://github.com/bdronneau/memoriesbox/commit/26990337a3fc23281d27fbce605fc5ce05dba6b8))
+* **Makefile:** add init step ([3eed9be](https://github.com/bdronneau/memoriesbox/commit/3eed9be2726ce5a31832fec11aea757738ea4de8))
+
+
+### 🐞 Bug Fixes
+
+* **addmemory:** conditionnal logger ([e37d6a6](https://github.com/bdronneau/memoriesbox/commit/e37d6a6eb8c47fa74904a1179a90c727d4515167))
+* **dotenv:** wrong example ([6cbc398](https://github.com/bdronneau/memoriesbox/commit/6cbc398f32f198dfce5a4272bdbcb54e8be5e70f))
+* **utils:** use contains ([84e2486](https://github.com/bdronneau/memoriesbox/commit/84e2486339aa4299af6eb0e0da833a7c2d3df77b))
+
+
+### 🛠️ Refactor
+
+* clean old migrate cmd ([01f6e97](https://github.com/bdronneau/memoriesbox/commit/01f6e9778c122b4e6c9d5c269c4e5c59fd000f3c))
+* **log:** move to slog ([b27716c](https://github.com/bdronneau/memoriesbox/commit/b27716c6336b762061b8701cc59362c2e2154180))
+* migrate primary key to xid ([3203ac6](https://github.com/bdronneau/memoriesbox/commit/3203ac6f9b61265be6f0f31a4ce97a1e63028e29))
+* **release-please:** handle new version ([a181611](https://github.com/bdronneau/memoriesbox/commit/a181611559c9613d4fad7bf452a40eaef497cbf9))
+
+
+### 🧰 Other
+
+* betteralign ([579911d](https://github.com/bdronneau/memoriesbox/commit/579911d6155883f22d4a2a910c51cc19966a2ce2))
+* bump github.com/DATA-DOG/go-sqlmock from 1.5.0 to 1.5.1 ([525d84a](https://github.com/bdronneau/memoriesbox/commit/525d84a0aac9644559f35180cb70f3cb5abc968e))
+* bump github.com/jackc/pgx/v4 from 4.18.1 to 4.18.2 ([af31a62](https://github.com/bdronneau/memoriesbox/commit/af31a62d29ce2eea12ed8fcfb7afd90d7f72bf19))
+* bump github.com/jackc/pgx/v5 from 5.4.3 to 5.5.0 ([6f6a675](https://github.com/bdronneau/memoriesbox/commit/6f6a675e34f6c03a0fe4529de57b0c950c3d4049))
+* bump github.com/jackc/pgx/v5 from 5.5.0 to 5.5.1 ([9502208](https://github.com/bdronneau/memoriesbox/commit/95022085476d3962a3e7156d70af7ab582b3a20d))
+* bump github.com/jackc/pgx/v5 in the deps group ([6fdd2c8](https://github.com/bdronneau/memoriesbox/commit/6fdd2c8017977cd4b107789a0a591ac0bcdbc560))
+* bump github.com/labstack/echo/v4 from 4.11.1 to 4.11.2 ([bcd0c3f](https://github.com/bdronneau/memoriesbox/commit/bcd0c3f0a199ba2eac12eba29ec8eab2cbbc039c))
+* bump github.com/labstack/echo/v4 from 4.11.2 to 4.11.3 ([546c1ab](https://github.com/bdronneau/memoriesbox/commit/546c1aba589854b03e2dde13932cec0bdb9f5d01))
+* bump github.com/rs/xid from 1.2.1 to 1.5.0 ([3b274bb](https://github.com/bdronneau/memoriesbox/commit/3b274bbd85d26f10dae6700184684963223d6a08))
+* bump github.com/spf13/viper from 1.16.0 to 1.17.0 ([78282ef](https://github.com/bdronneau/memoriesbox/commit/78282efb11a7f76fa5d9f24812f0957fee2170a4))
+* bump github.com/spf13/viper from 1.17.0 to 1.18.1 ([585ad2d](https://github.com/bdronneau/memoriesbox/commit/585ad2d8a2353ba5539c3d90fdf7efca02421257))
+* bump github.com/spf13/viper in the deps group ([382796e](https://github.com/bdronneau/memoriesbox/commit/382796ed0c7e2a5979d149ef6dc6dd1f1d8f839e))
+* bump golang from 1.21 to 1.22 ([23f5d12](https://github.com/bdronneau/memoriesbox/commit/23f5d120674a10c375656e71aa1a78e962298bb9))
+* bump golang.org/x/crypto from 0.16.0 to 0.17.0 ([4e97018](https://github.com/bdronneau/memoriesbox/commit/4e97018123359e2ca7a9834eee9e98cf60686865))
+* bump golang.org/x/net from 0.15.0 to 0.17.0 ([12431fb](https://github.com/bdronneau/memoriesbox/commit/12431fb95a1c00e25faac9cde75cb54cdd508341))
+* bump migrate/migrate from v4.15.2 to v4.17.0 ([5f5818a](https://github.com/bdronneau/memoriesbox/commit/5f5818a74bdd03ff4e17478e67a12c1d25451612))
+* bump migrate/migrate from v4.17.0 to v4.17.1 ([d1dea75](https://github.com/bdronneau/memoriesbox/commit/d1dea75b2185cfc589367e76f6e47b2ce402044b))
+* bump the deps group with 1 update ([3bcac7a](https://github.com/bdronneau/memoriesbox/commit/3bcac7abb96a1c40237dcb025f641512506bf779))
+* bump the deps group with 1 update ([5e8cbc0](https://github.com/bdronneau/memoriesbox/commit/5e8cbc0eec363e11804656c74c1039eb5f269c1a))
+* bump the deps group with 1 update ([b03e5ed](https://github.com/bdronneau/memoriesbox/commit/b03e5ed425254212b92b16dd731315ea14c3943a))
+* bump the deps group with 1 update ([debde3a](https://github.com/bdronneau/memoriesbox/commit/debde3ae90079283a699d0e8299fe3ec9c1834bc))
+* bump the deps group with 1 update ([929bc95](https://github.com/bdronneau/memoriesbox/commit/929bc955ba584472aee4be7835ec6449fdfd21ef))
+* bump the deps group with 1 update ([ce8eaca](https://github.com/bdronneau/memoriesbox/commit/ce8eacaa88d7ac1b2a7fe2c0db1979b4ad622d8e))
+* bump the deps group with 2 updates ([c7eea37](https://github.com/bdronneau/memoriesbox/commit/c7eea37bcd43653c1a10146506cf80b7315dc9a4))
+* bump the deps group with 2 updates ([b9146b0](https://github.com/bdronneau/memoriesbox/commit/b9146b031b852221b0a4bf015ecdc625960d816f))
+* bump the deps group with 5 updates ([5da5a1c](https://github.com/bdronneau/memoriesbox/commit/5da5a1c2478288ebeb89d53228d5426f06d67957))
+
 ## [1.5.0](https://github.com/bdronneau/memoriesbox/compare/v1.4.2...v1.5.0) (2023-09-25)
 
 
