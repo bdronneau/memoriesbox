@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.1](https://github.com/bdronneau/memoriesbox/compare/v2.0.0...v2.0.1) (2024-09-16)
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v5 in the deps group ([6c9468b](https://github.com/bdronneau/memoriesbox/commit/6c9468b6a11247a5fe6b87161eff110723c6fa5a))
+* bump github.com/rs/xid from 1.5.0 to 1.6.0 in the deps group ([f137d9d](https://github.com/bdronneau/memoriesbox/commit/f137d9d3d795e1676c28a18d116f0863a3156c04))
+* bump migrate/migrate from v4.17.1 to v4.18.1 ([bea2bbd](https://github.com/bdronneau/memoriesbox/commit/bea2bbdd2df37d415178a5d29e85b22f461604e7))
+* bump the deps group with 2 updates ([b6d752d](https://github.com/bdronneau/memoriesbox/commit/b6d752d6d9e9a58eb87a8c57065004e257f9d173))
+* **deps:** bump golang from 1.22 to 1.23 ([2fa0c92](https://github.com/bdronneau/memoriesbox/commit/2fa0c928dd19fa6c3e480b73d8b1465951862758))
+* go mod tidy ([2cdb133](https://github.com/bdronneau/memoriesbox/commit/2cdb133d372a319507e3700361426bafb978a3d8))
+
 ## [2.0.0](https://github.com/bdronneau/memoriesbox/compare/v1.5.0...v2.0.0) (2024-06-03)
 
 
