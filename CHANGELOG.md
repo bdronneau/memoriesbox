@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.1](https://github.com/bdronneau/memoriesbox/compare/v2.0.0...v2.0.1) (2024-11-18)
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v5 in the deps group ([6c9468b](https://github.com/bdronneau/memoriesbox/commit/6c9468b6a11247a5fe6b87161eff110723c6fa5a))
+* bump github.com/rs/xid from 1.5.0 to 1.6.0 in the deps group ([f137d9d](https://github.com/bdronneau/memoriesbox/commit/f137d9d3d795e1676c28a18d116f0863a3156c04))
+* bump github.com/volatiletech/sqlboiler/v4 in the deps group ([0e5af5b](https://github.com/bdronneau/memoriesbox/commit/0e5af5b7e329a5a8007a5f529b1bbaef86535789))
+* bump github.com/volatiletech/sqlboiler/v4 in the deps group ([938dce0](https://github.com/bdronneau/memoriesbox/commit/938dce09ad8985a15d56f1cfb45ec8108a2e0009))
+* bump github.com/volatiletech/strmangle in the deps group ([fbbf867](https://github.com/bdronneau/memoriesbox/commit/fbbf867454a0f34ebeee6e1ea88ddf9c048d694d))
+* bump github.com/volatiletech/strmangle in the deps group ([91a778c](https://github.com/bdronneau/memoriesbox/commit/91a778c703ffe9b95feb571d46c918a535f2233f))
+* bump go.uber.org/mock from 0.4.0 to 0.5.0 in the deps group ([e4a4ea1](https://github.com/bdronneau/memoriesbox/commit/e4a4ea1ac1fd92f249517417916035e6824f9c61))
+* bump migrate/migrate from v4.17.1 to v4.18.1 ([bea2bbd](https://github.com/bdronneau/memoriesbox/commit/bea2bbdd2df37d415178a5d29e85b22f461604e7))
+* bump the deps group with 2 updates ([b6d752d](https://github.com/bdronneau/memoriesbox/commit/b6d752d6d9e9a58eb87a8c57065004e257f9d173))
+* **deps:** bump golang from 1.22 to 1.23 ([2fa0c92](https://github.com/bdronneau/memoriesbox/commit/2fa0c928dd19fa6c3e480b73d8b1465951862758))
+* go mod tidy ([2cdb133](https://github.com/bdronneau/memoriesbox/commit/2cdb133d372a319507e3700361426bafb978a3d8))
+
 ## [2.0.0](https://github.com/bdronneau/memoriesbox/compare/v1.5.0...v2.0.0) (2024-06-03)
 
 
