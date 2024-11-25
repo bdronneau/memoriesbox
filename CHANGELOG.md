@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/bdronneau/memoriesbox/compare/v2.0.1...v2.0.2) (2024-11-25)
+
+
+### 🧰 Other
+
+* bump github.com/stretchr/testify in the deps group ([18e08ca](https://github.com/bdronneau/memoriesbox/commit/18e08ca581c53beb04b6155b2630e46ac6cc56f5))
+
 ## [2.0.1](https://github.com/bdronneau/memoriesbox/compare/v2.0.0...v2.0.1) (2024-11-18)
 
 
