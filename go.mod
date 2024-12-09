@@ -10,7 +10,7 @@ require (
 	github.com/golang-migrate/migrate/v4 v4.18.1
 	github.com/jackc/pgx/v5 v5.7.1
 	github.com/kat-co/vala v0.0.0-20170210184112-42e1d8b61f12
-	github.com/labstack/echo/v4 v4.12.0
+	github.com/labstack/echo/v4 v4.13.0
 	github.com/lib/pq v1.10.9
 	github.com/peterbourgon/ff/v3 v3.4.0
 	github.com/rs/xid v1.6.0
