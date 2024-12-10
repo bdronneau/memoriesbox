@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/bdronneau/memoriesbox/compare/v2.0.2...v2.0.3) (2024-12-10)
+
+
+### 🧰 Other
+
+* bump github.com/labstack/echo/v4 in the deps group ([f73c28d](https://github.com/bdronneau/memoriesbox/commit/f73c28d8b7b9103eae06e620bad3fe53e48eb8aa))
+
 ## [2.0.2](https://github.com/bdronneau/memoriesbox/compare/v2.0.1...v2.0.2) (2024-11-25)
 
 
