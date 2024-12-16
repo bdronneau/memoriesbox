@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.4](https://github.com/bdronneau/memoriesbox/compare/v2.0.3...v2.0.4) (2024-12-16)
+
+
+### 🧰 Other
+
+* bump github.com/labstack/echo/v4 in the deps group ([e5abd5a](https://github.com/bdronneau/memoriesbox/commit/e5abd5a0505f8d6cc44285d0ad1251cfb7ff2f8f))
+* bump golang.org/x/crypto from 0.27.0 to 0.31.0 ([679bae6](https://github.com/bdronneau/memoriesbox/commit/679bae62e3642006ea3e463fe4994c2e4cea64d5))
+
 ## [2.0.3](https://github.com/bdronneau/memoriesbox/compare/v2.0.2...v2.0.3) (2024-12-10)
 
 
