@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.6](https://github.com/bdronneau/memoriesbox/compare/v2.0.5...v2.0.6) (2025-01-06)
+
+
+### 🧰 Other
+
+* bump github.com/volatiletech/sqlboiler/v4 in the deps group ([da52952](https://github.com/bdronneau/memoriesbox/commit/da52952749321ecaa93568212c086bb0930837ba))
+
 ## [2.0.5](https://github.com/bdronneau/memoriesbox/compare/v2.0.4...v2.0.5) (2024-12-23)
 
 
