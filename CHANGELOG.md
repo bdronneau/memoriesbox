@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.7](https://github.com/bdronneau/memoriesbox/compare/v2.0.6...v2.0.7) (2025-01-27)
+
+
+### 🧰 Other
+
+* bump github.com/golang-migrate/migrate/v4 in the deps group ([7a50e07](https://github.com/bdronneau/memoriesbox/commit/7a50e074b2ce3a4f7803250f7040e8a554350ebe))
+* bump migrate/migrate from v4.18.1 to v4.18.2 ([5151540](https://github.com/bdronneau/memoriesbox/commit/515154072989fe1ecb270152e1c5bf13b6a52d08))
+
 ## [2.0.6](https://github.com/bdronneau/memoriesbox/compare/v2.0.5...v2.0.6) (2025-01-06)
 
 
