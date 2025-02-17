@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.8](https://github.com/bdronneau/memoriesbox/compare/v2.0.7...v2.0.8) (2025-02-17)
+
+
+### 🧰 Other
+
+* bump golang from 1.23 to 1.24 ([039eef9](https://github.com/bdronneau/memoriesbox/commit/039eef9d1a2424dc195ac8337199b947ffaccdcb))
+
 ## [2.0.7](https://github.com/bdronneau/memoriesbox/compare/v2.0.6...v2.0.7) (2025-01-27)
 
 
