@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.9](https://github.com/bdronneau/memoriesbox/compare/v2.0.8...v2.0.9) (2025-03-17)
+
+
+### 🧰 Other
+
+* bump github.com/spf13/viper in the deps group ([1717116](https://github.com/bdronneau/memoriesbox/commit/171711684ad9f3c586b6a2c779e0322141e8dbc7))
+* bump golang.org/x/net from 0.33.0 to 0.36.0 ([16534fb](https://github.com/bdronneau/memoriesbox/commit/16534fb5fb2b37c06f757607a3f24d49ce3fa353))
+* go mod tidy ([16512d3](https://github.com/bdronneau/memoriesbox/commit/16512d39df20b9e16cc9288e4b3ef34b0a62c7f0))
+
 ## [2.0.8](https://github.com/bdronneau/memoriesbox/compare/v2.0.7...v2.0.8) (2025-02-17)
 
 
