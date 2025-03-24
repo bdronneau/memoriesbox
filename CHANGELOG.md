@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.10](https://github.com/bdronneau/memoriesbox/compare/v2.0.9...v2.0.10) (2025-03-24)
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v5 in the deps group ([3e9b44d](https://github.com/bdronneau/memoriesbox/commit/3e9b44d6d1c3c6b597d57f4a818546b41334bb84))
+
 ## [2.0.9](https://github.com/bdronneau/memoriesbox/compare/v2.0.8...v2.0.9) (2025-03-17)
 
 
