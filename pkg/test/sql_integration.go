@@ -96,7 +96,12 @@ func (pi *PostgresIntegration) DB() *sql.DB {
 }
 
 func (pi *PostgresIntegration) Close() {
-	pi.db.Close()
+	defer func() {
+		if err := pi.db.Close(); err != nil {
+			pi.t.Errorf("Error closing the database: %v", err)
+		}
+	}()
+
 }
 
 func (pi *PostgresIntegration) Reset(ctx context.Context) {
