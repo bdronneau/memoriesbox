@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.11](https://github.com/bdronneau/memoriesbox/compare/v2.0.10...v2.0.11) (2025-04-22)
+
+
+### 🧰 Other
+
+* bump go.uber.org/mock from 0.5.0 to 0.5.1 in the deps group ([35df082](https://github.com/bdronneau/memoriesbox/commit/35df08225c485662a5af0607392ffc67ad0b4f4f))
+* bump golang.org/x/net from 0.36.0 to 0.38.0 ([507df7b](https://github.com/bdronneau/memoriesbox/commit/507df7b3a6ff3861ec559e00e121c84b8fa23929))
+* bump the deps group with 2 updates ([91aba0a](https://github.com/bdronneau/memoriesbox/commit/91aba0a7841fc1b35cfe50a6a394bd7dc2c3405b))
+
 ## [2.0.10](https://github.com/bdronneau/memoriesbox/compare/v2.0.9...v2.0.10) (2025-03-24)
 
 
