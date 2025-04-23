@@ -21,7 +21,6 @@ func TestGetRandomMemories(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Error creating mock database: %v", err)
 	}
-	defer db.Close()
 
 	// Set expectations for the mock database
 	rows := sqlmock.NewRows([]string{"author", "content", "append", "xid"}).AddRow("John", "Doe is not my lastname", time.Date(2022, 12, 12, 0, 0, 0, 0, time.UTC), "foobar")
