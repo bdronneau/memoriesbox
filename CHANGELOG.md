@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.12](https://github.com/bdronneau/memoriesbox/compare/v2.0.11...v2.0.12) (2025-04-23)
+
+
+### 🛠️ Refactor
+
+* **test:** remove close on mock testing ([5e2d62d](https://github.com/bdronneau/memoriesbox/commit/5e2d62d84ca7efd113c5382bec0e7fedf88a2018))
+
 ## [2.0.11](https://github.com/bdronneau/memoriesbox/compare/v2.0.10...v2.0.11) (2025-04-22)
 
 
