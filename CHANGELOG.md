@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.13](https://github.com/bdronneau/memoriesbox/compare/v2.0.12...v2.0.13) (2025-05-19)
+
+
+### 🧰 Other
+
+* bump github.com/golang-migrate/migrate/v4 in the deps group ([494e4f6](https://github.com/bdronneau/memoriesbox/commit/494e4f6729d345fc93a8bb47eef7d71d839b5855))
+* bump github.com/jackc/pgx/v5 in the deps group ([cc69e8f](https://github.com/bdronneau/memoriesbox/commit/cc69e8f68db3171ae2159456247197a14d2b9660))
+* bump github.com/volatiletech/sqlboiler/v4 in the deps group ([ace07cf](https://github.com/bdronneau/memoriesbox/commit/ace07cf15a0a8757f7aaad56ae5d449db3e845b8))
+* bump go.uber.org/mock from 0.5.1 to 0.5.2 in the deps group ([acbcc09](https://github.com/bdronneau/memoriesbox/commit/acbcc0918060268d5ad3a0ae4b9c7c950a4748fd))
+* bump migrate/migrate from v4.18.2 to v4.18.3 ([d3bd79a](https://github.com/bdronneau/memoriesbox/commit/d3bd79a726ac253d3b25273258ba8c0b0d8b4d00))
+
 ## [2.0.12](https://github.com/bdronneau/memoriesbox/compare/v2.0.11...v2.0.12) (2025-04-23)
 
 
