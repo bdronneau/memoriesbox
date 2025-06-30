@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.14](https://github.com/bdronneau/memoriesbox/compare/v2.0.13...v2.0.14) (2025-06-30)
+
+
+### 🧰 Other
+
+* bump github.com/go-viper/mapstructure/v2 from 2.2.1 to 2.3.0 ([05ab79c](https://github.com/bdronneau/memoriesbox/commit/05ab79c550e021fecb153e862ee7cafadb20817a))
+
 ## [2.0.13](https://github.com/bdronneau/memoriesbox/compare/v2.0.12...v2.0.13) (2025-05-19)
 
 
