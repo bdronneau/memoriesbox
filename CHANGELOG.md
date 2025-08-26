@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.14](https://github.com/bdronneau/memoriesbox/compare/v2.0.13...v2.0.14) (2025-08-26)
+
+
+### 🧰 Other
+
+* bump github.com/go-viper/mapstructure/v2 from 2.2.1 to 2.3.0 ([05ab79c](https://github.com/bdronneau/memoriesbox/commit/05ab79c550e021fecb153e862ee7cafadb20817a))
+* bump github.com/go-viper/mapstructure/v2 from 2.3.0 to 2.4.0 ([709e465](https://github.com/bdronneau/memoriesbox/commit/709e46560b87124f551722af547dcb301ee631f5))
+* bump golang from 1.24 to 1.25 ([6dd9c6b](https://github.com/bdronneau/memoriesbox/commit/6dd9c6bb0b887607a6adc09db24ec53991576ea1))
+* bump the deps group with 2 updates ([f583496](https://github.com/bdronneau/memoriesbox/commit/f58349670013cf9fc34c576b65a647455cd04246))
+
 ## [2.0.13](https://github.com/bdronneau/memoriesbox/compare/v2.0.12...v2.0.13) (2025-05-19)
 
 
