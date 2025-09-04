@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.15](https://github.com/bdronneau/memoriesbox/compare/v2.0.14...v2.0.15) (2025-09-02)
+
+
+### 🧰 Other
+
+* bump migrate/migrate from v4.18.3 to v4.19.0 ([68cfffd](https://github.com/bdronneau/memoriesbox/commit/68cfffd48902364423c127c43b2cdc070e3d439e))
+* bump the deps group with 2 updates ([3be85de](https://github.com/bdronneau/memoriesbox/commit/3be85de26560f0234a096aef289569d013fd11ea))
+
 ## [2.0.14](https://github.com/bdronneau/memoriesbox/compare/v2.0.13...v2.0.14) (2025-08-26)
 
 
