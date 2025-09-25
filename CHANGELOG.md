@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.16](https://github.com/bdronneau/memoriesbox/compare/v2.0.15...v2.0.16) (2025-09-15)
+
+
+### 🧰 Other
+
+* bump the deps group with 2 updates ([3fcdd50](https://github.com/bdronneau/memoriesbox/commit/3fcdd50a8f441c57e846a2284973955deb0c0aaa))
+
 ## [2.0.15](https://github.com/bdronneau/memoriesbox/compare/v2.0.14...v2.0.15) (2025-09-02)
 
 
