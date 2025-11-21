@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.17](https://github.com/bdronneau/memoriesbox/compare/v2.0.16...v2.0.17) (2025-11-21)
+
+
+### 🧰 Other
+
+* bump golang.org/x/crypto from 0.38.0 to 0.45.0 ([d15fdaa](https://github.com/bdronneau/memoriesbox/commit/d15fdaad89b6cc781d0688859c7fbe868f9845fe))
+
 ## [2.0.16](https://github.com/bdronneau/memoriesbox/compare/v2.0.15...v2.0.16) (2025-09-15)
 
 
