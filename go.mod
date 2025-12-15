@@ -10,7 +10,7 @@ require (
 	github.com/golang-migrate/migrate/v4 v4.19.1
 	github.com/jackc/pgx/v5 v5.7.6
 	github.com/kat-co/vala v0.0.0-20170210184112-42e1d8b61f12
-	github.com/labstack/echo/v4 v4.13.4
+	github.com/labstack/echo/v4 v4.14.0
 	github.com/lib/pq v1.10.9
 	github.com/peterbourgon/ff/v3 v3.4.0
 	github.com/rs/xid v1.6.0
@@ -52,11 +52,11 @@ require (
 	github.com/valyala/fasttemplate v1.2.2 // indirect
 	github.com/volatiletech/inflect v0.0.1 // indirect
 	go.yaml.in/yaml/v3 v3.0.4 // indirect
-	golang.org/x/crypto v0.45.0 // indirect
-	golang.org/x/net v0.47.0 // indirect
-	golang.org/x/sync v0.18.0 // indirect
-	golang.org/x/sys v0.38.0 // indirect
-	golang.org/x/text v0.31.0 // indirect
+	golang.org/x/crypto v0.46.0 // indirect
+	golang.org/x/net v0.48.0 // indirect
+	golang.org/x/sync v0.19.0 // indirect
+	golang.org/x/sys v0.39.0 // indirect
+	golang.org/x/text v0.32.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
