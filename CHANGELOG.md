@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.17](https://github.com/bdronneau/memoriesbox/compare/v2.0.16...v2.0.17) (2025-12-31)
+
+
+### 🧰 Other
+
+* bump github.com/golang-migrate/migrate/v4 in the deps group ([2889c6d](https://github.com/bdronneau/memoriesbox/commit/2889c6d44f7d74812e3b9b93f31906771be18117))
+* bump github.com/jackc/pgx/v5 in the deps group ([52ca015](https://github.com/bdronneau/memoriesbox/commit/52ca015ec3a05b21d2cf2b1152db3ed383d4f5d1))
+* bump github.com/labstack/echo/v4 in the deps group ([6fa67e0](https://github.com/bdronneau/memoriesbox/commit/6fa67e068f86ed53c3723d731d17958ad0441c36))
+* bump golang.org/x/crypto from 0.38.0 to 0.45.0 ([d15fdaa](https://github.com/bdronneau/memoriesbox/commit/d15fdaad89b6cc781d0688859c7fbe868f9845fe))
+* **deps:** bump migrate/migrate from v4.19.0 to v4.19.1 ([d7bcfaf](https://github.com/bdronneau/memoriesbox/commit/d7bcfaf650124530b36c5d26aee44a2051e69f97))
+
 ## [2.0.16](https://github.com/bdronneau/memoriesbox/compare/v2.0.15...v2.0.16) (2025-09-15)
 
 
