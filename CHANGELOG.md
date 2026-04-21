@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.18](https://github.com/bdronneau/memoriesbox/compare/v2.0.17...v2.0.18) (2026-04-21)
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v5 in the deps group ([4a36c22](https://github.com/bdronneau/memoriesbox/commit/4a36c2268b8bb1a23a70f1cfb2854a6f3e5e7363))
+* bump github.com/labstack/echo/v4 in the deps group ([a0d6e18](https://github.com/bdronneau/memoriesbox/commit/a0d6e18bff174167cb2f8d40588c1d960881d667))
+* bump github.com/lib/pq from 1.12.0 to 1.12.3 in the deps group ([dc3e188](https://github.com/bdronneau/memoriesbox/commit/dc3e188787acc7c629bca9d34e2d21f01ae6c0cd))
+* bump the deps group with 2 updates ([a34fefc](https://github.com/bdronneau/memoriesbox/commit/a34fefc30e045d1c0b226e551d27d3e6e6237b88))
+
 ## [2.0.17](https://github.com/bdronneau/memoriesbox/compare/v2.0.16...v2.0.17) (2026-02-16)
 
 
