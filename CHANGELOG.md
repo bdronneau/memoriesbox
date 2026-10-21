@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.1.0](https://github.com/bdronneau/memoriesbox/compare/v2.0.17...v2.1.0) (2026-09-14)
+
+
+### 🚀 Features
+
+* **golang:** bump version ([7f00101](https://github.com/bdronneau/memoriesbox/commit/7f001013e982b6e5f3e4f8d4baf4ba4d9d2b25ac))
+
+
+### 🧰 Other
+
+* bump github.com/jackc/pgx/v5 in the deps group ([9ae39cf](https://github.com/bdronneau/memoriesbox/commit/9ae39cf767c1cfaa496b5672af5795861c5f5580))
+* bump github.com/jackc/pgx/v5 in the deps group ([4a36c22](https://github.com/bdronneau/memoriesbox/commit/4a36c2268b8bb1a23a70f1cfb2854a6f3e5e7363))
+* bump github.com/labstack/echo/v4 in the deps group ([0be3ab1](https://github.com/bdronneau/memoriesbox/commit/0be3ab1590580a2217523e011dca84a0ad57ebbb))
+* bump github.com/labstack/echo/v4 in the deps group ([df87859](https://github.com/bdronneau/memoriesbox/commit/df87859873281a42222571434c99b1a17ef2d4e7))
+* bump github.com/labstack/echo/v4 in the deps group ([fba86d7](https://github.com/bdronneau/memoriesbox/commit/fba86d79173389d2f58e95703be7d3cb400ab9b7))
+* bump github.com/labstack/echo/v4 in the deps group ([a0d6e18](https://github.com/bdronneau/memoriesbox/commit/a0d6e18bff174167cb2f8d40588c1d960881d667))
+* bump github.com/lib/pq from 1.12.0 to 1.12.3 in the deps group ([dc3e188](https://github.com/bdronneau/memoriesbox/commit/dc3e188787acc7c629bca9d34e2d21f01ae6c0cd))
+* bump github.com/stretchr/testify in the deps group ([3d49f5e](https://github.com/bdronneau/memoriesbox/commit/3d49f5ef0593263728ce90c0fa47099db8aa78f2))
+* bump migrate/migrate from v4.19.1 to v4.20.1 ([be77bd7](https://github.com/bdronneau/memoriesbox/commit/be77bd7eedfcd4d0df069059227d2cf4654eb061))
+* bump the deps group with 2 updates ([12471cd](https://github.com/bdronneau/memoriesbox/commit/12471cdc31509fce3cc1583adea24727503cbab0))
+* bump the deps group with 2 updates ([a34fefc](https://github.com/bdronneau/memoriesbox/commit/a34fefc30e045d1c0b226e551d27d3e6e6237b88))
+
 ## [2.0.17](https://github.com/bdronneau/memoriesbox/compare/v2.0.16...v2.0.17) (2026-02-16)
 
 
