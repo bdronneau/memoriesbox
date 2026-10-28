@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/bdronneau/memoriesbox/compare/v2.1.0...v2.1.1) (2026-10-28)
+
+
+### 🧰 Other
+
+* bump github.com/labstack/echo/v4 from 4.16.0 to 4.16.1 ([9ce3d5e](https://github.com/bdronneau/memoriesbox/commit/9ce3d5e9bf477c0eb5621f18f407c9738beb358c))
+
 ## [2.1.0](https://github.com/bdronneau/memoriesbox/compare/v2.0.17...v2.1.0) (2026-09-14)
 
 
